@@ -23,7 +23,6 @@ const Layout = ({ children }) => {
     const themeIcon = useRef(null);
     const themeContainer = useRef(null);
 
-
     useEffect(() => {
         setDark();
         setItems(document.getElementsByClassName("hNnXkn"));
@@ -63,7 +62,7 @@ const Layout = ({ children }) => {
             themeContainer?.current.classList.remove("sun_moon_change");
         }, 300);
         themeIcon.current.classList.add("sun_moon_change");
-        themeIcon.current.src = SUN;
+        themeIcon.current.src = MOON;
 
         for(let i=0;i<items.length;i++){
             items.item(i).style.setProperty("background",  "#f7f7f7");
@@ -88,7 +87,7 @@ const Layout = ({ children }) => {
             themeIcon.current.classList.remove("sun_moon_change");
         }, 300);
         themeIcon.current.classList.add("sun_moon_change");
-        themeIcon.current.src = MOON;
+        themeIcon.current.src = SUN;
 
         let linkedin = document.querySelector(".linkedin");
         let twitter = document.querySelector(".twitter");

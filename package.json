@@ -1,0 +1,38 @@
+{
+  "name": "caglaryalcin.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "author": "Caglar Yalcin",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "^5.7.0",
+    "gatsby-plugin-image": "^3.7.0",
+    "gatsby-plugin-jss": "^5.7.0",
+    "gatsby-plugin-manifest": "^5.7.0",
+    "gatsby-plugin-netlify-cms": "^7.7.0",
+    "gatsby-plugin-react-helmet": "^6.7.0",
+    "gatsby-plugin-sharp": "^5.7.0",
+    "gatsby-plugin-sitemap": "^6.7.0",
+    "gatsby-plugin-styled-components": "^6.7.0",
+    "gatsby-source-filesystem": "^5.7.0",
+    "gatsby-transformer-remark": "^6.7.0",
+    "gatsby-transformer-sharp": "^5.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-jss": "^10.10.0",
+    "react-rotating-text": "^1.4.1",
+    "styled-components": "^5.3.6"
+  }
+}

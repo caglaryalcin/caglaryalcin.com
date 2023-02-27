@@ -25,6 +25,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #d8d3d0;
 }
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
@@ -50,7 +51,6 @@ progress {
 
 a {
   text-decoration: none;
-  background-color: transparent;
   -webkit-text-decoration-skip: objects;
   color: #d8d6d0;
 }
@@ -76,7 +76,7 @@ dfn {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
-  
+  color: #d8d3d0;
 }
 
 mark {
@@ -105,10 +105,6 @@ sup {
 
 img {
   border-style: none;
-}
-
-svg:not(:root) {
-  overflow: hidden;
 }
 
 code, kbd, pre, samp {
@@ -222,8 +218,6 @@ html {
 }
 
 body {
-
-  
   font-family: 'Muli', sans-serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -245,7 +239,6 @@ img {
 h1 {
   padding: 0;
   margin: 0 0 1.45rem;
-  color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -256,7 +249,6 @@ h1 {
 h2 {
   padding: 0;
   margin: 0 0 1.45rem;
-  color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -266,7 +258,6 @@ h2 {
 h3 {
   padding: 0;
   margin: 0 0 1.45rem;
-  
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
@@ -276,7 +267,6 @@ h3 {
 h4 {
   padding: 0;
   margin: 0 0 1.45rem;
-  color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -286,7 +276,6 @@ h4 {
 h5 {
   padding: 0;
   margin: 0 0 1.45rem;
-  color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -296,7 +285,6 @@ h5 {
 h6 {
   padding: 0;
   margin: 0 0 1.45rem;
-  color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -313,7 +301,6 @@ ul {
   margin: 0 0 1.15rem 1.45rem;
   list-style-position: outside;
   list-style-image: none;
-  
 }
 
 ol {
@@ -336,7 +323,7 @@ dd {
 p {
   padding: 0;
   margin: 0 0 1.45rem;
-  
+  color: #d8d3d0;
 }
 
 figure {
@@ -420,6 +407,7 @@ th {
 
 li {
   margin-bottom: calc(1.25rem / 2);
+  color: inherit;
 }
 
 ol li {
@@ -428,6 +416,7 @@ ol li {
 
 ul li {
   padding-left: 0;
+  color: inherit;
 }
 
 li>ol {
@@ -448,7 +437,6 @@ blockquote *:last-child {
 
 li *:last-child {
   margin-bottom: 0;
-  
 }
 
 p *:last-child {
@@ -549,7 +537,7 @@ pre code:before, pre code:after, pre tt:before, pre tt:after {
 }
 
 :root{
-  background-color: #212529;
+  background-color: #181a1b;
 }
 
 .theme-container {
@@ -562,7 +550,7 @@ pre code:before, pre code:after, pre tt:before, pre tt:after {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .theme-container:hover {

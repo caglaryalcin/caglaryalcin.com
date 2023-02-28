@@ -52,7 +52,7 @@ progress {
 a {
   text-decoration: none;
   -webkit-text-decoration-skip: objects;
-  color: #d8d6d0;
+  color: inherit;
 }
 
 a:hover {
@@ -71,12 +71,6 @@ b, strong {
 
 dfn {
   font-style: italic;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-  color: #d8d3d0;
 }
 
 mark {
@@ -529,7 +523,7 @@ pre code:before, pre code:after, pre tt:before, pre tt:after {
 
 ::selection {
   color: unset;
-  background-color: #f4f4f4; /* WebKit/Blink Browsers */
+  background-color: #8b8989; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
   color: unset;

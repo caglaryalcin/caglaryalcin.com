@@ -527,7 +527,7 @@ pre code:before, pre code:after, pre tt:before, pre tt:after {
 }
 ::-moz-selection {
   color: unset;
-  background-color: #f4f4f4; /* Gecko Browsers */
+  background-color: #8b8989; /* Gecko Browsers */
 }
 
 :root{

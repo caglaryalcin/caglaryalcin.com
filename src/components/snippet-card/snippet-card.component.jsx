@@ -40,7 +40,7 @@ const SnippetCard = () => {
 						altDescription='github' />
 					<CustomIcon
 						className={"twitter"}
-						targetUrl='https://twitter.com/cglrbae'
+						targetUrl='https://twitter.com/alphalimaparis'
 						imageSource={TwitterLogo}
 						altDescription='twitter' />
 				</SocialIcons>

@@ -9,12 +9,10 @@ import {
 	BoldText,
 } from './../section-card/section-card.styles'
 
-import CustomEmoji from './../custom-emoji/custom-emoji.component'
-
 const SkillsCard = () => {
 	return (
 		<>
-			<SectionTitle><CustomEmoji label='tool' emoji='🛠' /> Technology Stack</SectionTitle>
+			<SectionTitle>Technology Stack</SectionTitle>
 			<StackList>
 				<Item>
 					I'm currently focused on <Tech style={{ borderBottom: '3px solid #f0db4f' }}>Virtualization</Tech>, <Tech style={{ borderBottom: '3px solid #00b336' }}>Backup</Tech> and <Tech style={{ borderBottom: '3px solid #cd8d8d' }}>OpenSource</Tech> platforms.

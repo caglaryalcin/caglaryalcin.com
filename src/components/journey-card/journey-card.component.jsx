@@ -28,20 +28,20 @@ const JourneyCard = () => {
 
 	return (
 		<>
-			<SectionTitle><CustomEmoji label='computer' emoji='💻' /> Experiences</SectionTitle>
+			<SectionTitle>Experiences</SectionTitle>
 			<SubTitle>Present</SubTitle>
 			<ItemList>
 				<Item>
-				<CustomEmoji label='graduation' emoji='🏛️' /> <span className={classes.presentText}>System Engineer at <CustomLink targetUrl='https://intertech.com.tr'>InterTech</CustomLink>. <Date>(Apr 2022 – )</Date></span>
+				<CustomEmoji label='graduation' emoji='⚓' /> <span className={classes.presentText}>System Engineer at <CustomLink targetUrl='https://intertech.com.tr'>InterTech</CustomLink>. <Date>(Apr 2022 – )</Date></span>
 				</Item>
 			</ItemList>
 			<SubTitle>Past</SubTitle>
 			<ItemList>
 				<Item>
-				<CustomEmoji label='graduation' emoji='🚑' /> System Support Specialist at <CustomLink targetUrl='https://www.fujifilm.com/tr/tr'>Fujifilm Turkey</CustomLink>. <Date>(May 2019 – Mar 2022)</Date>
+				<CustomEmoji label='graduation' emoji='🩺' /> System Support Specialist at <CustomLink targetUrl='https://www.fujifilm.com/tr/tr'>Fujifilm Turkey</CustomLink>. <Date>(May 2019 – Mar 2022)</Date>
 				</Item>
 				<Item>
-				<CustomEmoji label='graduation' emoji='👜' /> System Administrator at <CustomLink targetUrl='https://www.matras.com/'>Matraş</CustomLink>. <Date>(Dec 2016 – Apr 2019)</Date>
+				<CustomEmoji label='graduation' emoji='💼' /> System Administrator at <CustomLink targetUrl='https://www.matras.com/'>Matraş</CustomLink>. <Date>(Dec 2016 – Apr 2019)</Date>
 				</Item>
 				<Item>
 				<CustomEmoji label='graduation' emoji='💾' /> System Support Specialist at <CustomLink targetUrl='https://www.netas.com.tr/'>Netaş</CustomLink>. <Date>(Oct 2013 – Jun 2016)</Date>

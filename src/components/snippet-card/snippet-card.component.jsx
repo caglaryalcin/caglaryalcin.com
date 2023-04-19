@@ -24,7 +24,7 @@ const SnippetCard = () => {
 				<Title>Hi, I'm Caglar.</Title>
 				<Snippet>System Engineer at <CustomLink targetUrl='https://intertech.com.tr'>InterTech</CustomLink></Snippet>
 				<Description>
-				I'm an experienced System Administrator in the field virtualization and interested in open source solutions, computer hardware and professional IT infrastructure products.<br />
+				I'm an experienced System Engineer in the field virtualization and interested in open source solutions, computer hardware and professional IT infrastructure products.<br />
 				I <b><ReactRotatingText items={['love free and open-source software (FOSS).', 'love privacy.', 'love security.', 'love virtualization platforms.', 'love writing scripts.','love Open Systems Interconnection (OSI).']} /></b>
 				</Description>
 				<SocialIcons>

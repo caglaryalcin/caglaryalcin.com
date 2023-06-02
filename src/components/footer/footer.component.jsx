@@ -7,11 +7,11 @@ const Footer = () => {
   return (
     <>
       <FooterDiv>
-        © {new Date().getFullYear() + " "}
-        Caglar Yalcin
+        © {new Date().getFullYear() + " "}Caglar Yalcin
         <br />
-        <a href="mailto:mail@caglaryalcin.com">mail[at]caglaryalcin.com </a>
-        <AiOutlineMail /> &nbsp;
+        <a href="mailto:mail@caglaryalcin.com" target="_blank">
+          <AiOutlineMail /> &nbsp;
+        </a>
         <a href="https://raw.githubusercontent.com/caglaryalcin/pgp-public-key/main/public.asc" target="_blank">
           <HiOutlineKey />
         </a>

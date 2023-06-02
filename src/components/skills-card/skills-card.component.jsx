@@ -25,6 +25,9 @@ const SkillsCard = () => {
 				</Item>
 			</StackList>
 			<CurrentLearning>
+				<BoldText>Currently learning: </BoldText>
+				DevOps
+      		</CurrentLearning>
 		</>
 	)
 }

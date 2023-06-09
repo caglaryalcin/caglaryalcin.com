@@ -15,13 +15,13 @@ const SkillsCard = () => {
 			<SectionTitle>Technology Stack</SectionTitle>
 			<StackList>
 				<Item>
-					I'm currently focused on<Tech style={{ borderBottom: '3px solid #f0db4f' }}>Virtualization</Tech>,<Tech style={{ borderBottom: '3px solid #ff9900' }}>Cloud</Tech>,<Tech style={{ borderBottom: '3px solid #00b336' }}>Backup</Tech> and<Tech style={{ borderBottom: '3px solid #cd8d8d' }}>OpenSource</Tech>platforms.
+					I'm currently focused on<Tech style={{ borderBottom: '3px solid #f0db4f' }}>Virtualization</Tech>,<Tech style={{ borderBottom: '3px solid #ff9900' }}>Cloud Computing</Tech>,<Tech style={{ borderBottom: '3px solid #00b336' }}>Backup Solutions</Tech>, and<Tech style={{ borderBottom: '3px solid #692e2e' }}>Open-Source</Tech>Platforms.
 				</Item>
 				<Item>
-					I've knowledge on<Tech style={{ borderBottom: '3px solid #0db7ed' }}>Docker</Tech>for containerization. I also write<Tech style={{ borderBottom: '3px solid #007acc' }}>Bash</Tech>and<Tech style={{ borderBottom: '3px solid #007acc' }}>Powershell</Tech>according to the needs of the institutions I work in.
+					I have knowledge of<Tech style={{ borderBottom: '3px solid #0db7ed' }}>Docker</Tech>for containerization. Additionally, I write scripts in <Tech style={{ borderBottom: '3px solid #007acc' }}>Bash</Tech>and<Tech style={{ borderBottom: '3px solid #007acc' }}>Powershell</Tech>based on the specific needs of the institutions I work with.
 				</Item>
 				<Item>
-					I'm familiar with<Tech style={{ borderBottom: '3px solid #d40000' }}>Linux Distributions</Tech>and I like to use them very much.
+					I am familiar with various<Tech style={{ borderBottom: '3px solid #d40000' }}>Linux distributions</Tech>, and I greatly enjoy using them."
 				</Item>
 			</StackList>
 			<CurrentLearning>

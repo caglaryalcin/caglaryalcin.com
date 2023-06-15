@@ -30,7 +30,7 @@ const SnippetCard = () => {
 				<SocialIcons>
 					<CustomIcon
 						className={"linkedin"}
-						targetUrl='https://www.linkedin.com/in/caglar-yalcin/'
+						targetUrl='https://www.linkedin.com/in/cglr/'
 						imageSource={LinkedinLogo}
 						altDescription='linkedin'/>
 					<CustomIcon
@@ -40,7 +40,7 @@ const SnippetCard = () => {
 						altDescription='github' />
 					<CustomIcon
 						className={"twitter"}
-						targetUrl='https://twitter.com/alphalimaparis'
+						targetUrl='https://twitter.com/caglarsys'
 						imageSource={TwitterLogo}
 						altDescription='twitter' />
 				</SocialIcons>

@@ -22,8 +22,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Caglar Yalcin - System Engineer`,
+        short_name: `Caglar Yalcin`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

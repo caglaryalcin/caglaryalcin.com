@@ -59,10 +59,3 @@ export const CurrentLearning = styled.div`
     margin-top: 30px;
     font-style: italic;
 `
-
-export const Quote = styled.p`
-    font-size: 19px;
-    @media (max-width: 768px) {
-        font-size: 18px;
-    }
-`

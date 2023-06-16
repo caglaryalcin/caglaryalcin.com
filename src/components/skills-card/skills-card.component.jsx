@@ -27,7 +27,7 @@ const SkillsCard = () => {
 			<CurrentLearning>
 				<BoldText>Currently learning: </BoldText>
 				DevOps
-      		</CurrentLearning>
+			</CurrentLearning>
 		</>
 	)
 }

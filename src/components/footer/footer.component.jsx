@@ -9,10 +9,10 @@ const Footer = () => {
       <FooterDiv>
         © {new Date().getFullYear() + " "}Caglar Yalcin
         <br />
-        <a href="mailto:mail@caglaryalcin.com" target="_blank">
+        <a href="mailto:mail@caglaryalcin.com" target="_blank" rel="noopener noreferrer">
           <AiOutlineMail /> &nbsp;
         </a>
-        <a href="https://raw.githubusercontent.com/caglaryalcin/pgp-public-key/main/public.asc" target="_blank">
+        <a href="https://raw.githubusercontent.com/caglaryalcin/pgp-public-key/main/public.asc" target="_blank" rel="noopener noreferrer">
           <HiOutlineKey />
         </a>
       </FooterDiv>

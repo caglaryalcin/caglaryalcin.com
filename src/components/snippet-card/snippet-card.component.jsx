@@ -21,18 +21,18 @@ const SnippetCard = () => {
 	return (
 		<MainContainer>
 			<div>
-				<Title>Hi, I'm Caglar.</Title>
-				<Snippet>System Engineer at <CustomLink targetUrl='https://intertech.com.tr'>InterTech</CustomLink></Snippet>
+				<Title>Hi, I'm Caglar.<CustomLink></CustomLink></Title>
+				<Snippet>System Engineer at <a href="https://intertech.com.tr">InterTech</a></Snippet>
 				<Description>
-				I'm an experienced System Engineer in the field virtualization and interested in open source solutions, computer hardware and professional IT infrastructure products.<br />
-				I <b><ReactRotatingText items={['love free and open-source software (FOSS).', 'love privacy.', 'love security.', 'love virtualization platforms.', 'love writing scripts.','love Open Systems Interconnection (OSI).']} /></b>
+					I'm an experienced System Engineer in the field virtualization and interested in open source solutions, computer hardware and professional IT infrastructure products.<br />
+					I <b><ReactRotatingText items={['love free and open-source software (FOSS).', 'love privacy.', 'love security.', 'love virtualization platforms.', 'love writing scripts.', 'love Open Systems Interconnection (OSI).']} /></b>
 				</Description>
 				<SocialIcons>
 					<CustomIcon
 						className={"linkedin"}
 						targetUrl='https://www.linkedin.com/in/cglr/'
 						imageSource={LinkedinLogo}
-						altDescription='linkedin'/>
+						altDescription='linkedin' />
 					<CustomIcon
 						className={"github"}
 						targetUrl='https://github.com/caglaryalcin'

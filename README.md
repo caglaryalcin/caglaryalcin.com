@@ -3,7 +3,7 @@
 #### You can use with docker :whale:
 
 ```
-docker container run -dp 8000:8000 caglaryalcin/gatsby-website
+docker container run --name caglaryalcin.com -dp 8000:8000 caglaryalcin/gatsby-website
 ```
 
 ![Alt Text](https://github.com/caglaryalcin/caglaryalcin/blob/main/personal.gif)

@@ -2,10 +2,10 @@
 
 This is my personal website.
 
+#### You can use with docker :whale:
+
+```
+docker container run -dp 8000:8000 caglaryalcin/gatsby-website
+```
+
 ![Alt Text](https://github.com/caglaryalcin/caglaryalcin/blob/main/personal.gif)
-
-#### You can use this command to download the repo without the "main" name on 'C:'.
-
-```
-curl -o $env:userprofile\Desktop\caglaryalcin.zip https://github.com/caglaryalcin/caglaryalcin.com/archive/refs/heads/main.zip; Expand-Archive -Path $env:userprofile\Desktop\caglaryalcin.zip -DestinationPath C:\ -Force *>$null; Rename-Item C:\caglaryalcin.com-main caglaryalcin.com; Remove-Item $env:userprofile\Desktop\caglaryalcin.zip -recurse -ErrorAction SilentlyContinue
-```

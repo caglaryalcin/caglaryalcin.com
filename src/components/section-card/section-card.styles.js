@@ -39,10 +39,6 @@ export const Date = styled.em`
     font-size: 16px;
 `
 
-export const BoldText = styled.span`
-    font-weight: bold;
-`
-
 export const ItalicText = styled.span`
     font-style: italic;
 `
@@ -54,8 +50,20 @@ export const Tech = styled.span`
     padding: 2px 7px;
 `
 
-export const CurrentLearning = styled.div`
+export const Bash = styled.span`
+    background-color: #181a1b;
+    color: #23c613;
+    font-family: "Cascadia Code";
     font-size: 17px;
-    margin-top: 30px;
-    font-style: italic;
+    border-radius: 3px;
+    padding: 2px 7px;
+`
+
+export const PS = styled.span`
+    background-color: #012456;
+    color: #e2dfd7;
+    font-family: "Lucida Console";
+    font-size: 17px;
+    border-radius: 3px;
+    padding: 2px 7px;
 `

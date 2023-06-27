@@ -5,9 +5,10 @@ import {
 	StackList,
 	Item,
 	Tech,
-	CurrentLearning,
-	BoldText,
+	Bash,
+	PS,
 } from './../section-card/section-card.styles'
+import ReactRotatingText from 'react-rotating-text';
 
 const SkillsCard = () => {
 	return (
@@ -15,19 +16,18 @@ const SkillsCard = () => {
 			<SectionTitle>Technology Stack</SectionTitle>
 			<StackList>
 				<Item>
-					I'm currently focused on<Tech style={{ borderBottom: '3px solid #f0db4f' }}>Virtualization</Tech>,<Tech style={{ borderBottom: '3px solid #ff9900' }}>Cloud Computing</Tech>,<Tech style={{ borderBottom: '3px solid #00b336' }}>Backup Solutions</Tech>, and<Tech style={{ borderBottom: '3px solid #692e2e' }}>Open-Source</Tech>Platforms.
+					I'm currently focused on<Tech style={{ borderBottom: '3px solid #0db7ed' }}>Docker</Tech>platform,<Tech style={{ borderBottom: '3px solid #ff9900' }}>AWS</Tech> services and<Tech style={{ borderBottom: '3px solid #62dafb' }}>Next.js</Tech>.
 				</Item>
 				<Item>
-					I have knowledge of<Tech style={{ borderBottom: '3px solid #0db7ed' }}>Docker</Tech>for containerization. Additionally, I write scripts in <Tech style={{ borderBottom: '3px solid #007acc' }}>Bash</Tech>and<Tech style={{ borderBottom: '3px solid #007acc' }}>Powershell</Tech>based on the specific needs of the institutions I work with.
+					I'm using <Tech style={{ borderBottom: '3px solid #cf4f4f' }}>Linux distributions</Tech>for both desktop and server, and I greatly enjoy using them.
 				</Item>
 				<Item>
-					I am familiar with various<Tech style={{ borderBottom: '3px solid #d40000' }}>Linux distributions</Tech>, and I greatly enjoy using them."
+					I'm familiar with<Tech style={{ borderBottom: '3px solid #fc6d26' }}>Gitlab CI/CD</Tech>.
+				</Item>
+				<Item>
+					I write scripts in <Bash style={{ borderBottom: '3px solid #5c5c5c' }}>user@ubuntu:~$<ReactRotatingText items={['']} /></Bash> and <PS style={{ borderBottom: '3px solid #5c5c5c' }}>PS C:\<ReactRotatingText items={['']} /></PS> based on the specific needs of the institutions I work with.
 				</Item>
 			</StackList>
-			<CurrentLearning>
-				<BoldText>Currently learning: </BoldText>
-				DevOps
-			</CurrentLearning>
 		</>
 	)
 }

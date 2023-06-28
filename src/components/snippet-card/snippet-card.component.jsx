@@ -4,7 +4,7 @@ import {
   Snippet,
   Description,
   SocialIconsContainer,
-  SocialIcon,
+  SocialIcons,
   MainContainer,
   ImageContainer
 } from './snippet-card.styles';
@@ -24,34 +24,34 @@ const SnippetCard = () => {
         <Title>Hi, I'm Caglar.<CustomLink></CustomLink></Title>
         <Snippet>System Engineer at <a href="https://intertech.com.tr">InterTech</a></Snippet>
         <Description>
-          I'm a continuous self-improving System Engineer with experience in virtualization, open-source solutions, system operations, privacy and security.<br />
+          I'm a continuous self-improving System Engineer with experience in data center operations, virtualization, open-source solutions, system operations, privacy and security.<br />
           I <b><ReactRotatingText items={['love free and open-source software (FOSS).', 'love privacy.', 'love security.', 'love self hosted platforms.', 'love writing scripts.', 'love Open Systems Interconnection (OSI).']} /></b>
         </Description>
         <SocialIconsContainer>
-          <SocialIcon>
+          <SocialIcons>
             <CustomIcon
               className={"linkedin"}
               targetUrl='https://www.linkedin.com/in/cglr/'
               imageSource={LinkedinLogo}
               altDescription='linkedin'
             />
-          </SocialIcon>
-          <SocialIcon>
+          </SocialIcons>
+          <SocialIcons>
             <CustomIcon
               className={"github"}
               targetUrl='https://github.com/caglaryalcin'
               imageSource={GithubLogo}
               altDescription='github'
             />
-          </SocialIcon>
-          <SocialIcon>
+          </SocialIcons>
+          <SocialIcons>
             <CustomIcon
               className={"twitter"}
               targetUrl='https://twitter.com/caglarsys'
               imageSource={TwitterLogo}
               altDescription='twitter'
             />
-          </SocialIcon>
+          </SocialIcons>
         </SocialIconsContainer>
       </div>
       <ImageContainer>

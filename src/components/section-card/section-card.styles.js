@@ -51,8 +51,16 @@ export const Tech = styled.span`
 `
 
 export const Bash = styled.span`
-    background-color: #181a1b;
-    color: #23c613;
+    background-color: #300a24;
+    color: #7dd033;
+    font-family: "Cascadia Code";
+    font-size: 17px;
+    border-radius: 3px;
+    padding: 2px 7px;
+`
+export const Bash2 = styled.span`
+    background-color: #300a24;
+    color: #d8d6d0;
     font-family: "Cascadia Code";
     font-size: 17px;
     border-radius: 3px;

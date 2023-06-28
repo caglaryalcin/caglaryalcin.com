@@ -21,7 +21,7 @@ export const SocialIconsContainer = styled.div`
   display: flex;
 `;
 
-export const SocialIcon = styled.div`
+export const SocialIcons = styled.div`
   display: flex;
   img {
     width: 27px;
@@ -31,9 +31,9 @@ export const SocialIcon = styled.div`
   transition: opacity 0.2s ease-in-out;
 
   &:hover {
-    opacity: 0.5;
+    opacity: 0.9;
     img {
-      filter: drop-shadow(3px 3px 4px gray) ;
+      filter: drop-shadow(1px 1px 5px gray) ;
     }
   }
 `;

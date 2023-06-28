@@ -6,4 +6,4 @@
 docker container run --name caglaryalcin.com -dp 8000:8000 caglaryalcin/gatsby-website
 ```
 
-![Alt Text](https://github.com/caglaryalcin/caglaryalcin/blob/main/personal.gif)
+![Alt Text](https://github.com/caglaryalcin/caglaryalcin/blob/main/person.gif)

@@ -6,8 +6,9 @@ import {
 	ItemList,
 	Item,
 	Date,
-	BoldText
+	BoldText,
 } from './../section-card/section-card.styles'
+
 import CustomEmoji from './../custom-emoji/custom-emoji.component'
 import CustomLink from '../custom-link/custom-link.component'
 import useStyles from './journey-card.styles'

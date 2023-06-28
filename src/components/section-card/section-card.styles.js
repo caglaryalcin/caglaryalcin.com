@@ -23,6 +23,10 @@ export const ItemList = styled.ul`
     margin-left: 0;
 `
 
+export const BoldText = styled.span`
+    font-weight: bold;
+`
+
 export const StackList = styled.ul`
     margin-top: 5px;
     list-style: square inside;
@@ -64,7 +68,7 @@ export const Bash2 = styled.span`
     font-family: "Cascadia Code";
     font-size: 17px;
     border-radius: 3px;
-    padding: 2px 7px;
+    padding: 2px 5px;
 `
 
 export const PS = styled.span`
@@ -73,5 +77,5 @@ export const PS = styled.span`
     font-family: "Lucida Console";
     font-size: 17px;
     border-radius: 3px;
-    padding: 2px 7px;
+    padding: 3px 7px;
 `

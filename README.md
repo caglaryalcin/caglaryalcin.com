@@ -5,5 +5,11 @@
 ```
 docker container run --name caglaryalcin.com -dp 8000:8000 caglaryalcin/gatsby-website
 ```
+or
+```
+docker container run --name caglaryalcin.com -dp 8000:8000 ghcr.io/caglaryalcin/test:latest
+```
+
+<br />
 
 ![Alt Text](https://github.com/caglaryalcin/caglaryalcin/blob/main/person.gif)

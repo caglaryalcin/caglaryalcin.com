@@ -26,7 +26,7 @@ const SkillsCard = () => {
 					I'm familiar with<Tech style={{ borderBottom: '3px solid #fc6d26' }}>Gitlab CI/CD</Tech>.
 				</Item>
 				<Item>
-					I write scripts in <Bash style={{ borderBottom: '3px solid #300a24' }}>user@ubuntu<Bash2>:~$<ReactRotatingText items={['']} /></Bash2></Bash> and <PS style={{ borderBottom: '3px solid #012456' }}>PS C:\> <ReactRotatingText items={['']} /></PS> based on the specific needs of the institutions I work with.
+					I'm writing scripts in <Bash style={{ borderBottom: '3px solid #300a24' }}>user@ubuntu<Bash2>:~$<ReactRotatingText items={['']} /></Bash2></Bash> and <PS style={{ borderBottom: '3px solid #012456' }}>PS C:\> <ReactRotatingText items={['']} /></PS> based on the specific needs of the institutions I work with.
 				</Item>
 			</StackList>
 		</>

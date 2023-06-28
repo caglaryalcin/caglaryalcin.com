@@ -7,6 +7,7 @@ import {
 	Item,
 	Date,
 	BoldText,
+	Edulist,
 } from './../section-card/section-card.styles'
 
 import CustomEmoji from './../custom-emoji/custom-emoji.component'
@@ -50,12 +51,15 @@ const JourneyCard = () => {
 				{!loadedMore && <SeeMoreLink onClick={() => setLoadedMore(true)}>Education &#8629;</SeeMoreLink>}
 				{loadedMore && (
 					<>
+					<SubTitle>Education</SubTitle>
+					<Edulist>
 						<Item>
 							<CustomEmoji label='graduation' emoji='📚' /> Studying at <BoldText>Anadolu University</BoldText> Management Information System department. <Date>(2021 - )</Date>
 						</Item>
 						<Item>
 							<CustomEmoji label='graduation' emoji='🎓' /> Graduated from <BoldText>Ataturk University</BoldText> with a associate degree in Information Management. <Date>(2021)</Date>
 						</Item>
+					</Edulist>
 					</>
 				)}
 			</ItemList>

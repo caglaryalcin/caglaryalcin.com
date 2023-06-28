@@ -23,6 +23,13 @@ export const ItemList = styled.ul`
     margin-left: 0;
 `
 
+export const Edulist = styled.ul`
+    margin-top: 15px;
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+`
+
 export const BoldText = styled.span`
     font-weight: bold;
 `

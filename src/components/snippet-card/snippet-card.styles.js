@@ -23,17 +23,16 @@ export const SocialIconsContainer = styled.div`
 
 export const SocialIcons = styled.div`
   display: flex;
+  margin-bottom: 1.75rem;
+  height: 30px;
+  width: 36px;
   img {
     width: 27px;
-    margin-right: 9px;
   }
-  position: relative;
-  transition: opacity 0.2s ease-in-out;
 
   &:hover {
-    opacity: 0.9;
     img {
-      filter: drop-shadow(1px 1px 5px gray) ;
+      filter: invert(51%) sepia(18%) saturate(1180%) hue-rotate(313deg) brightness(84%) contrast(101%);
     }
   }
 `;

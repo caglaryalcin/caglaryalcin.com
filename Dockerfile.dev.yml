@@ -1,6 +1,8 @@
 FROM node:alpine
 
-LABEL Caglar Yalcin <caglaryalcin.com>
+LABEL maintainer="Caglar Yalcin <caglaryalcin.com>"
+
+LABEL org.opencontainers.image.source = "https://github.com/caglaryalcin/caglaryalcin.com"
 
 EXPOSE 8000
 

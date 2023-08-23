@@ -5,7 +5,7 @@
 ```
 docker container run --name caglaryalcin.com -dp 8000:8000 caglaryalcin/gatsby-website
 ```
-or gitHub container registry
+or github container registry
 ```
 docker container run --name caglaryalcin.com -dp 8000:8000 ghcr.io/caglaryalcin/caglaryalcin.com/gatsby-website:latest
                                                            

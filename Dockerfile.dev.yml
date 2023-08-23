@@ -13,7 +13,7 @@ RUN \
 
 RUN apk add automake autoconf libtool nasm
 
-RUN npm install -g gatsby-cli
+RUN npm install -g gatsby-cli node-gyp
 
 WORKDIR /app
 COPY . .

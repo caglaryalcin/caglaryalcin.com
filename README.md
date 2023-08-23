@@ -10,6 +10,8 @@ or
 docker container run --name caglaryalcin.com -dp 8000:8000 ghcr.io/caglaryalcin/gatsby-website:latest
 ```
 
+and open `localhost:8000` in the browser.
+
 <br />
 
 ![Alt Text](https://github.com/caglaryalcin/caglaryalcin/blob/main/person.gif)

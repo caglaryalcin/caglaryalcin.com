@@ -1,23 +1,18 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import './layout.css';
+import MOON from './../images/moon.png';
+import SUN from './../images/sun.png';
+import LinkedinLightLogo from '../images/social/linkedin_light.png';
+import GithubLightLogo from '../images/social/github_light.png';
+import TwitterLightLogo from '../images/social/twitter_light.png';
+import LinkedinDarkLogo from '../images/social/linkedin_dark.png';
+import GithubDarkLogo from '../images/social/github_dark.png';
+import TwitterDarkLogo from '../images/social/twitter_dark.png';
 
-import React, { useEffect, useRef, useState } from 'react'
-import PropTypes from 'prop-types'
-import './layout.css'
-import MOON from './../images/moon.png'
-import SUN from './../images/sun.png'
-import LinkedinLightLogo from '../images/social/linkedin_light.png'
-import GithubLightLogo from '../images/social/github_light.png'
-import TwitterLightLogo from '../images/social/twitter_light.png'
-import LinkedinDarkLogo from '../images/social/linkedin_dark.png'
-import GithubDarkLogo from '../images/social/github_dark.png'
-import TwitterDarkLogo from '../images/social/twitter_dark.png'
 const Layout = ({ children }) => {
   const [theme, setTheme] = useState("dark");
+  const [loading, setLoading] = useState(true);
   const [items, setItems] = useState(null);
   const my_tags = ["body", "p", "li", "a", "span", "h1", "h2", "h3"];
   const themeIcon = useRef(null);
@@ -26,6 +21,22 @@ const Layout = ({ children }) => {
   useEffect(() => {
     setDark();
     setItems(document.getElementsByClassName("hNnXkn"));
+  }, []);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    if (document.readyState === 'complete') {
+      setLoading(false);
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -96,12 +107,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      {loading && <div className="loading-background">
+        <div className="loader"></div>
+      </div>}
       <div
         style={{
           margin: `60px auto`,
           maxWidth: 770,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
+          opacity: !loading ? 1 : 0
         }}
       >
         <main>{children}</main>
@@ -121,4 +136,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Layout;

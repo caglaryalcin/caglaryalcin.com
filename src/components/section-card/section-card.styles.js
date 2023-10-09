@@ -78,7 +78,7 @@ export const Bash2 = styled.span`
     padding: 2px 5px;
 `
 
-export const PS = styled.span`
+export const PsComponent = styled.span`
     background-color: #012456;
     color: #e2dfd7;
     font-family: "Lucida Console";

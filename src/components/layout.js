@@ -123,9 +123,9 @@ const Layout = ({ children }) => {
                     ref={themeContainer}
                     className="theme-container shadow-dark"
                     onClick={toggleTheme}
-                    onKeyPress={toggleTheme}  // Klavye etkileşimi için
-                    role="button"  // Semantik rol ekleyin
-                    tabIndex={0}   // Klavye ile erişilebilirlik için tabIndex ekleyin
+                    onKeyPress={toggleTheme}
+                    role="button"
+                    tabIndex={0}
                 >
                     <img ref={themeIcon} src={MOON} alt="moon" className="theme-icon" />
                 </div>

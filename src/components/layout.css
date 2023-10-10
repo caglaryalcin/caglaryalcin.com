@@ -614,7 +614,6 @@ sun_moon_change {
   border-radius: 50%; */
   width: 50px;
   height: 50px;
-  animation: rotate 2s linear infinite;
   background: url('../images/loading.gif') center no-repeat;
   background-size: cover;
 }

@@ -19,6 +19,7 @@ import netas from "../../images/company/netas.jpg";
 import inter from "../../images/company/inter.jpg";
 
 const SeeMoreLink = styled.div`
+  display: inline-block;
   text-decoration: underline;
   cursor: pointer;
   &:hover {

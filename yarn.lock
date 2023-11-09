@@ -5171,7 +5171,7 @@ functions-have-names@^1.2.2:
   resolved "https://registry.npmjs.org/functions-have-names/-/functions-have-names-1.2.3.tgz"
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
 
-gatsby-cli@^5.11.0, gatsby-cli@^5.12.4:
+gatsby-cli@^5.11.0:
   version "5.12.4"
   resolved "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-5.12.4.tgz"
   integrity sha512-GD+otyd5LlgSbYK4ODrKyAise/k32G7Qy7H/k+gJ2P8DCG9sU+j//2zNwF7mY8C5dl0SpROqFTL+I0Y1DK4tmQ==

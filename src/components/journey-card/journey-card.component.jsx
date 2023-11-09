@@ -35,7 +35,7 @@ const ItemContainer = styled.div`
 const Dot = styled.span`
   height: 7px;
   width: 7px;
-  background-color: #bbb;
+  background-color: #413f3f;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
@@ -46,7 +46,7 @@ const Dot = styled.span`
 
 const Line = styled.div`
   width: 2px;
-  background-color: #bbb;
+  background-color: #413f3f;
   position: absolute;
   left: 7px;
   top: 27px;

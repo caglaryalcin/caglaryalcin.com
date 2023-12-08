@@ -34,6 +34,7 @@
     "react-icons": "4.9.0",
     "react-jss": "10.10.0",
     "react-rotating-text": "^1.4.1",
-    "styled-components": "5.3.11"
+    "styled-components": "5.3.11",
+    "typeface-ubuntu": "^1.1.13"
   }
 }

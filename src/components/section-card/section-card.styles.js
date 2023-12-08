@@ -21,7 +21,7 @@ const PSblinkCursor = keyframes`
 export const PSBlinkingCursor = styled.span`
   animation: ${PSblinkCursor} 1s steps(1, end) infinite;
   display: inline-block;
-  font-size: 9px;
+  font-size: 10px;
   transform: rotate(90deg);
   vertical-align: -3px;
 `;
@@ -92,7 +92,8 @@ export const Bash = styled.span`
   font-family: "Ubuntu", "Cascadia Code";
   font-size: 17px;
   border-radius: 3px;
-  padding-right: -5px;
+  padding-left: 1px;
+  padding-right: 1px;
   padding-bottom: 2px;
 `;
 export const Bash2 = styled.span`
@@ -117,6 +118,7 @@ export const PsComponent = styled.span`
   font-family: "Consolas", monospace;
   font-size: 17px;
   border-radius: 3px;
+  padding-left: 2px;
   padding-right: 5px;
   padding-bottom: 1px;
 `;

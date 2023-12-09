@@ -20,9 +20,8 @@ const PSblinkCursor = keyframes`
 
 export const PSBlinkingCursor = styled.span`
   animation: ${PSblinkCursor} 1s steps(1, end) infinite;
-  display: inline-block;
   font-size: 15px;
-  vertical-align: -3px;
+  vertical-align: -2px;
 `;
 
 export const SectionTitle = styled.div`
@@ -98,20 +97,18 @@ export const Tech = styled.span`
 `;
 
 export const Bash = styled.span`
-  background-color: #300a24;
+  background: #300a24;
   color: #7dd033;
-  font-family: "Ubuntu", "Cascadia Code";
   font-size: 17px;
+  font-family: "Ubuntu", "Cascadia Code";
   border-radius: 3px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-bottom: 2px;
+  padding: 0 3px 1px;
 `;
+
 export const Bash2 = styled.span`
   color: #d8d6d0;
   font-family: "Ubuntu", "Cascadia Code";
   font-size: 17px;
-  border-radius: 3px;
   padding: 2px;
 `;
 
@@ -119,21 +116,21 @@ export const Bash3 = styled.span`
   color: #6d97c5;
   font-family: "Ubuntu", "Cascadia Code";
   font-size: 17px;
-  border-radius: 3px;
   padding: 2px;
 `;
 
 export const PsComponent = styled.span`
-  background-color: #012456;
+  background: #012456;
   color: #e2dfd7;
-  font-family: "Consolas", monospace;
-  font-size: 17px;
+  font: 17px "Consolas", monospace;
   border-radius: 3px;
-  padding-left: 2px;
-  padding-right: 5px;
-  padding-bottom: 1px;
+  padding: 0 5px 0 0;
+
   @media (max-width: 768px) {
-    margin-left: 30px;
-    padding-left: 0px;
+    margin-left: 21px;
+    padding-left: 0;
+    .hidden-space {
+      display: none;
+    }
   }
 `;

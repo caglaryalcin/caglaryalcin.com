@@ -78,6 +78,9 @@ export const Techs = styled.li`
 export const Date = styled.em`
   color: #888;
   font-size: 16px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
 
 export const ItalicText = styled.span`
@@ -129,4 +132,8 @@ export const PsComponent = styled.span`
   padding-left: 2px;
   padding-right: 5px;
   padding-bottom: 1px;
+  @media (max-width: 768px) {
+    margin-left: 30px;
+    padding-left: 0px;
+  }
 `;

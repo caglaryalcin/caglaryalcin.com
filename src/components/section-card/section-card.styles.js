@@ -34,7 +34,7 @@ export const SectionTitle = styled.div`
   padding: 10px 20px;
   border-bottom: 4px solid #413f3f;
   @media (max-width: 768px) {
-    font-size: 22px;
+    font-size: 21px;
   }
 `;
 
@@ -70,6 +70,12 @@ export const StackList = styled.ul`
 
 export const Item = styled.li``;
 
+export const Techs = styled.li`
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+`;
+
 export const Date = styled.em`
   color: #888;
   font-size: 16px;
@@ -84,6 +90,9 @@ export const Tech = styled.span`
   font-size: 17px;
   border-radius: 3px;
   padding: 2px 7px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
 
 export const Bash = styled.span`

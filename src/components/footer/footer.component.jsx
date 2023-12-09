@@ -12,7 +12,7 @@ const Footer = () => {
         <a href="mailto:mail@caglaryalcin.com" target="_blank" rel="noopener noreferrer">
           <AiOutlineMail /> &nbsp;
         </a>
-        <a href="https://raw.githubusercontent.com/caglaryalcin/pgp-public-key/main/public.asc" target="_blank" rel="noopener noreferrer">
+        <a href="https://raw.githubusercontent.com/caglaryalcin/pgp-public-key/main/public.asc" className="key-icon" target="_blank" rel="noopener noreferrer">
           <HiOutlineKey />
         </a>
       </FooterDiv>

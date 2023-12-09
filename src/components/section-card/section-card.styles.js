@@ -21,8 +21,7 @@ const PSblinkCursor = keyframes`
 export const PSBlinkingCursor = styled.span`
   animation: ${PSblinkCursor} 1s steps(1, end) infinite;
   display: inline-block;
-  font-size: 10px;
-  transform: rotate(90deg);
+  font-size: 15px;
   vertical-align: -3px;
 `;
 

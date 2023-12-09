@@ -21,6 +21,7 @@ export const Snippet = styled.h3`
 `;
 
 export const Description = styled.div`
+  padding-bottom: 26px;
   // Mobile
   @media (max-width: 768px) {
     width: 150%;

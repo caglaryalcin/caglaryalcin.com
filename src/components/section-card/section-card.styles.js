@@ -103,6 +103,9 @@ export const Bash = styled.span`
   font-family: "Ubuntu", "Cascadia Code";
   border-radius: 3px;
   padding: 0 3px 1px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const Bash2 = styled.span`
@@ -110,6 +113,9 @@ export const Bash2 = styled.span`
   font-family: "Ubuntu", "Cascadia Code";
   font-size: 17px;
   padding: 2px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const Bash3 = styled.span`
@@ -117,7 +123,10 @@ export const Bash3 = styled.span`
   font-family: "Ubuntu", "Cascadia Code";
   font-size: 17px;
   padding: 2px;
-`;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}`;
 
 export const PsComponent = styled.span`
   background: #012456;
@@ -127,6 +136,7 @@ export const PsComponent = styled.span`
   padding: 0 5px 0 0;
 
   @media (max-width: 768px) {
+    font-size: 16px;
     margin-left: 21px;
     padding-left: 0;
     .hidden-space {

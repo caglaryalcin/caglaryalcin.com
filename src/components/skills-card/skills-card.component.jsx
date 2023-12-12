@@ -1,8 +1,9 @@
 import React from 'react'
-import { BlinkingCursor,PSBlinkingCursor } from './../section-card/section-card.styles';
 
 import {
 	SectionTitle,
+	BashBlinkingCursor,
+	PSBlinkingCursor,
 	StackList,
 	Techs,
 	Tech,
@@ -11,8 +12,6 @@ import {
 	Bash3,
 	PsComponent,
 } from './../section-card/section-card.styles'
-
-
 
 const SkillsCard = () => {
 	return (
@@ -29,7 +28,7 @@ const SkillsCard = () => {
 					I'm familiar with<Tech style={{ borderBottom: '3px solid #fc6d26' }}>Gitlab CI/CD</Tech>.
 				</Techs>
 				<Techs>
-					I'm writing scripts in <Bash style={{ borderBottom: '3px solid #300a24' }}>bash@linux<Bash2>:<Bash3>~</Bash3>$ <span style={{ whiteSpace: 'pre' }}> </span><BlinkingCursor>█</BlinkingCursor></Bash2></Bash> and<span className="hidden-space">&nbsp;</span><PsComponent style={{ borderBottom: '3px solid #012456' }}> PS C:\> <PSBlinkingCursor>_</PSBlinkingCursor></PsComponent> based on the specific needs of the institutions i work with.
+					I'm writing scripts in <Bash>bash@linux<Bash2>:<Bash3>~</Bash3>$ <BashBlinkingCursor>█</BashBlinkingCursor></Bash2></Bash> and <PsComponent> PS C:\> <PSBlinkingCursor></PSBlinkingCursor></PsComponent> based on the specific needs of the institutions i work with.
 				</Techs>
 			</StackList>
 		</>

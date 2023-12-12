@@ -7,8 +7,9 @@ export const FooterDiv = styled.div`
   padding-top: 20px;
   text-align: right;
   @media (max-width: 768px) {
-    .key-icon {
-      margin-right: 100px;
+    text-align: left;
+    .key-icon, .mail-icon {
+      font-size: 18px;
     }
   }
 `;

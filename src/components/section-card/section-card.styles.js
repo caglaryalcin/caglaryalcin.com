@@ -1,29 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import "typeface-ubuntu";
 
-const blinkCursor = keyframes`
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-`;
-
-export const BlinkingCursor = styled.span`
-  animation: ${blinkCursor} 0.9s steps(1, end) infinite;
-  font-weight: 2;
-  transform: scaleX(0.8);
-  font-size: 15px;
-`;
-
-const PSblinkCursor = keyframes`
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-`;
-
-export const PSBlinkingCursor = styled.span`
-  animation: ${PSblinkCursor} 1s steps(1, end) infinite;
-  font-size: 15px;
-  vertical-align: -2px;
-`;
-
 export const SectionTitle = styled.div`
   font-weight: bold;
   font-size: 24px;
@@ -97,20 +74,26 @@ export const Tech = styled.span`
 `;
 
 export const Bash = styled.span`
-  background: #300a24;
-  color: #7dd033;
+  @font-face {
+    font-family: "Ubuntu Mono";
+    src: url("./path-to-font/UbuntuMono-Regular.ttf") format("truetype");
+  }
+
+  background: #57003f;
+  color: #7ddd32;
   font-size: 17px;
-  font-family: "Ubuntu", "Cascadia Code";
+  font-family: "Ubuntu Mono", "Cascadia Code";
   border-radius: 3px;
   padding: 0 3px 1px;
   @media (max-width: 768px) {
     font-size: 16px;
+    padding-left: 1px;
   }
 `;
 
 export const Bash2 = styled.span`
   color: #d8d6d0;
-  font-family: "Ubuntu", "Cascadia Code";
+  font-family: "Ubuntu Mono", "Cascadia Code";
   font-size: 17px;
   padding: 2px;
   @media (max-width: 768px) {
@@ -120,27 +103,49 @@ export const Bash2 = styled.span`
 
 export const Bash3 = styled.span`
   color: #6d97c5;
-  font-family: "Ubuntu", "Cascadia Code";
+  font-family: "Ubuntu Mono", "Cascadia Code";
   font-size: 17px;
-  padding: 2px;
   @media (max-width: 768px) {
     font-size: 16px;
   }
 }`;
 
+const BashblinkCursor = keyframes`
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+`;
+
+export const BashBlinkingCursor = styled.span`
+  animation: ${BashblinkCursor} 0.9s steps(1, end) infinite;
+  font-weight: 2;
+  transform: scaleX(0.8);
+  font-size: 15px;
+`;
+
 export const PsComponent = styled.span`
   background: #012456;
   color: #e2dfd7;
-  font: 17px "Consolas", monospace;
+  font: 17px "Consolas";
   border-radius: 3px;
-  padding: 0 5px 0 0;
+  padding-bottom: 1px;
+  padding-right: 2px;
+  padding-left: 4px;
 
   @media (max-width: 768px) {
     font-size: 16px;
-    margin-left: 21px;
-    padding-left: 0;
-    .hidden-space {
-      display: none;
-    }
+    display: inline-block;
   }
+`;
+
+const blinkAnimation = keyframes`
+  50% { opacity: 0; }
+`;
+
+export const PSBlinkingCursor = styled.span`
+  width: 10px;
+  height: 4px;
+  margin-left: 2px;
+  background: #fedba9;
+  display: inline-block;
+  animation: ${blinkAnimation} 1s steps(1, start) 0s infinite;
 `;

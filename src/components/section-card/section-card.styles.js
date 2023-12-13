@@ -134,7 +134,7 @@ export const PsComponent = styled.span`
   padding: 0 3px 1px 2px;
   @media (max-width: 768px) {
     font-size: 16px;
-    margin-left: 10px;
+    display: inline-block;
   }
 `;
 
@@ -151,4 +151,8 @@ export const PSBlinkingCursor = styled.span`
   background: #fedba9;
   position: relative;
   top: 2px;
+  @media (max-width: 768px) {
+    position: relative;
+    top: 5px;
+  }
 `;

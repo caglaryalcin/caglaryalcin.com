@@ -84,6 +84,8 @@ export const Bash = styled.span`
   @media (max-width: 768px) {
     font-size: 16px;
     padding-left: 2px;
+    padding-bottom: 2px;
+    padding-top: 1px;
   }
 `;
 

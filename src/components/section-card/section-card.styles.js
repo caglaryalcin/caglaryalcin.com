@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import "typeface-ubuntu";
+import "@fontsource/cascadia-code";
+import "@fontsource/source-code-pro";
 
 export const SectionTitle = styled.div`
   font-weight: bold;
@@ -74,26 +75,21 @@ export const Tech = styled.span`
 `;
 
 export const Bash = styled.span`
-  @font-face {
-    font-family: "Ubuntu Mono";
-    src: url("./path-to-font/UbuntuMono-Regular.ttf") format("truetype");
-  }
-
   background: #57003f;
   color: #7ddd32;
   font-size: 17px;
-  font-family: "Ubuntu Mono", "Cascadia Code";
+  font-family: "Cascadia Code";
   border-radius: 3px;
   padding: 0 3px 1px;
   @media (max-width: 768px) {
     font-size: 16px;
-    padding-left: 1px;
+    padding-left: 2px;
   }
 `;
 
 export const Bash2 = styled.span`
   color: #d8d6d0;
-  font-family: "Ubuntu Mono", "Cascadia Code";
+  font-family: "Cascadia Code";
   font-size: 17px;
   padding: 2px;
   @media (max-width: 768px) {
@@ -103,7 +99,7 @@ export const Bash2 = styled.span`
 
 export const Bash3 = styled.span`
   color: #6d97c5;
-  font-family: "Ubuntu Mono", "Cascadia Code";
+  font-family: "Cascadia Code";
   font-size: 17px;
   @media (max-width: 768px) {
     font-size: 16px;
@@ -117,23 +113,28 @@ const BashblinkCursor = keyframes`
 
 export const BashBlinkingCursor = styled.span`
   animation: ${BashblinkCursor} 0.9s steps(1, end) infinite;
+  margin-bottom: 20px; !important;
   font-weight: 2;
   transform: scaleX(0.8);
   font-size: 15px;
+  @media (max-width: 768px) {
+    position: relative;
+    bottom: 1px;
+  }
+  position: relative;
+  bottom: 2px;
 `;
 
 export const PsComponent = styled.span`
   background: #012456;
   color: #e2dfd7;
-  font: 17px "Consolas";
+  font-family: "Source Code Pro";
+  font-size: 16px;
   border-radius: 3px;
-  padding-bottom: 1px;
-  padding-right: 2px;
-  padding-left: 4px;
-
+  padding: 0 3px 1px 2px;
   @media (max-width: 768px) {
     font-size: 16px;
-    display: inline-block;
+    margin-left: 10px;
   }
 `;
 
@@ -142,10 +143,12 @@ const blinkAnimation = keyframes`
 `;
 
 export const PSBlinkingCursor = styled.span`
+  animation: ${blinkAnimation} 1s steps(1, start) 0s infinite;
+  display: inline-block;
   width: 10px;
   height: 4px;
-  margin-left: 2px;
+  margin-left: 4px;
   background: #fedba9;
-  display: inline-block;
-  animation: ${blinkAnimation} 1s steps(1, start) 0s infinite;
+  position: relative;
+  top: 2px;
 `;

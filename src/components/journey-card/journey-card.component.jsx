@@ -60,8 +60,11 @@ const Logo = styled.img`
   margin-right: 5px;
   margin-bottom: -3px;
   align-self: center;
-  border: 0.5px solid #181a1b;
+  border: 0.4px solid #181a1b;
   padding: 0.2px;
+  @media (max-width: 768px) {
+    padding: 0px;
+  }
 `;
 
 const JourneyCard = () => {

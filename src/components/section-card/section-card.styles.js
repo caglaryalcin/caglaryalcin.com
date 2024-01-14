@@ -137,6 +137,7 @@ export const PsComponent = styled.span`
   @media (max-width: 768px) {
     font-size: 16px;
     display: inline-block;
+    line-height: 1.5;
   }
 `;
 

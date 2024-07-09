@@ -61,7 +61,7 @@ const Logo = styled.img`
   margin-bottom: -3px;
   align-self: center;
   border: 0.4px solid #181a1b;
-  padding: 0.2px;
+  padding: 0px;
   @media (max-width: 768px) {
     padding: 0px;
   }
@@ -79,7 +79,7 @@ const JourneyCard = () => {
           <Logo src={inter} alt="" />
           <span className={classes.presentText}>
             <CustomLink targetUrl="https://intertech.com.tr">
-              InterTech
+              Intertech
             </CustomLink>
           </span>
         </Item>
@@ -88,7 +88,18 @@ const JourneyCard = () => {
           <Dot />
           <Line />
           <Item>
-            Senior System Engineer <Date>(Nov 2023 – )</Date>
+            <CustomLink targetUrl="https://verified.sertifier.com/en/verify/70778394413340">
+              Architect System Engineer
+            </CustomLink>{" "}
+            <Date>(Jul 2024 – )</Date>
+          </Item>
+        </ItemContainer>
+
+        <ItemContainer>
+          <Dot />
+          <Line />
+          <Item>
+            Senior System Engineer <Date>(Nov 2023 – Jul 2024 )</Date>
           </Item>
         </ItemContainer>
 

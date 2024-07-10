@@ -1,25 +1,32 @@
 FROM alpine:3.18
 
-ENV NODE_VERSION 18.19.0
+ENV NODE_VERSION=18.19.0
 
 LABEL maintainer="Caglar Yalcin <caglaryalcin.com>"
-
-LABEL org.opencontainers.image.source = "https://github.com/caglaryalcin/caglaryalcin.com"
+LABEL org.opencontainers.image.source="https://github.com/caglaryalcin/caglaryalcin.com"
 
 EXPOSE 8000
 
-RUN apk update && rm -rf /var/cache/apk/*
+RUN apk update && apk upgrade && rm -rf /var/cache/apk/*
 
-RUN \
-  apk add --no-cache nodejs npm python3 make g++ && \
-  apk add vips-dev fftw-dev automake autoconf libtool nasm --update-cache \
-  --repository http://dl-3.alpinelinux.org/alpine/edge/community \
-  --repository http://dl-3.alpinelinux.org/alpine/edge/main
+RUN apk add --no-cache \
+    nodejs \
+    npm \
+    python3 \
+    build-base \
+    vips-dev \
+    fftw-dev \
+    automake \
+    autoconf \
+    libtool \
+    nasm
 
-RUN npm install -g gatsby-cli node-gyp && npm install -g yarn
+RUN npm install -g gatsby-cli node-gyp yarn
 
 WORKDIR /app
+
 COPY . .
+
 RUN yarn install && yarn cache clean
 
-CMD ["yarn", "develop", "-H", "0.0.0.0" ]
+CMD ["yarn", "develop", "-H", "0.0.0.0"]

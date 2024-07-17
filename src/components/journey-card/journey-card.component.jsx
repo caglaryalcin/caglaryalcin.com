@@ -42,6 +42,9 @@ const Dot = styled.span`
   left: 5px;
   top: 15px;
   z-index: 1;
+  @media (max-width: 768px) {
+    top: 12px;
+  }
 `;
 
 const Line = styled.div`
@@ -52,6 +55,9 @@ const Line = styled.div`
   top: 27px;
   height: 25px;
   z-index: 0;
+  @media (max-width: 768px) {
+    top: 22px;
+  }
 `;
 
 const Logo = styled.img`
@@ -91,7 +97,7 @@ const JourneyCard = () => {
             <CustomLink targetUrl="https://verified.sertifier.com/en/verify/70778394413340">
               Architect System Engineer
             </CustomLink>{" "}
-            <Date>(Jul 2024 – )</Date>
+            <Date>(Jul 2024 –)</Date>
           </Item>
         </ItemContainer>
 
@@ -99,14 +105,14 @@ const JourneyCard = () => {
           <Dot />
           <Line />
           <Item>
-            Senior System Engineer <Date>(Nov 2023 – Jul 2024 )</Date>
+            Senior System Engineer <Date>(Nov 2023 – Jul 2024)</Date>
           </Item>
         </ItemContainer>
 
         <ItemContainer>
           <Dot />
           <Item>
-            System Engineer <Date>(Apr 2022 – Nov 2023 )</Date>
+            System Engineer <Date>(Apr 2022 – Nov 2023)</Date>
           </Item>
         </ItemContainer>
 
@@ -157,9 +163,9 @@ const JourneyCard = () => {
             <SubTitle>Education</SubTitle>
             <Edulist>
               <Item>
-                <CustomEmoji label="graduation" emoji="📚" /> Studying at{" "}
+                <CustomEmoji label="graduation" emoji="📚" /> Graduated from{" "}
                 <BoldText>Anadolu University</BoldText> Management Information
-                System department. <Date>(2021 - )</Date>
+                System department. <Date>(2024)</Date>
               </Item>
               <Item>
                 <CustomEmoji label="graduation" emoji="🎓" /> Graduated from{" "}

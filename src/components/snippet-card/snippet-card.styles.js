@@ -27,6 +27,7 @@ export const Description = styled.div`
     width: 150%;
     margin: 0 auto;
     padding-bottom: 1.5rem;
+    height: 13em;
   }
 `;
 

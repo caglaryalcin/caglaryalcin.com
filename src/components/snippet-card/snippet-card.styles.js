@@ -24,9 +24,9 @@ export const Description = styled.div`
   padding-bottom: 26px;
   // Mobile
   @media (max-width: 768px) {
-    width: 200%;
-    margin: 0 auto;
+    width: 180%;
     margin-top: 50px;
+    margin-bottom: 20px;
     height: 9em;
   }
 `;

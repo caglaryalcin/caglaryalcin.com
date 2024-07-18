@@ -13,7 +13,7 @@ export const Snippet = styled.h3`
   font-weight: 600;
   font-size: 23px;
   line-height: 1.5em;
-
+  // Mobile
   @media (max-width: 768px) {
     font-size: 20px;
     width: 100%;
@@ -24,10 +24,10 @@ export const Description = styled.div`
   padding-bottom: 26px;
   // Mobile
   @media (max-width: 768px) {
-    width: 150%;
+    width: 200%;
     margin: 0 auto;
-    padding-bottom: 1.5rem;
-    height: 13em;
+    margin-top: 50px;
+    height: 9em;
   }
 `;
 
@@ -54,8 +54,8 @@ export const SocialIcons = styled.div`
 
 export const ImageContainer = styled.div`
   width: 700px;
+  // Mobile
   @media (max-width: 768px) {
     width: 270%;
-    margin: 0 auto;
   }
 `;

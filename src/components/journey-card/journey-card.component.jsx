@@ -97,7 +97,7 @@ const JourneyCard = () => {
             <CustomLink targetUrl="https://verified.sertifier.com/en/verify/70778394413340">
               Architect System Engineer
             </CustomLink>{" "}
-            <Date>(Jul 2024 –)</Date>
+            <Date>(Jul 2024 – )</Date>
           </Item>
         </ItemContainer>
 
@@ -165,12 +165,12 @@ const JourneyCard = () => {
               <Item>
                 <CustomEmoji label="graduation" emoji="📚" /> Graduated from{" "}
                 <BoldText>Anadolu University</BoldText> Management Information
-                System department. <Date>(2024)</Date>
+                System department.
               </Item>
               <Item>
                 <CustomEmoji label="graduation" emoji="🎓" /> Graduated from{" "}
                 <BoldText>Ataturk University</BoldText> with a associate degree
-                in Information Management. <Date>(2021)</Date>
+                in Information Management.
               </Item>
             </Edulist>
           </>

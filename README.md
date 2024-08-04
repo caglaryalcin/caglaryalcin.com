@@ -9,7 +9,7 @@ docker container run --name caglaryalcin.com -dp 9000:9000 caglaryalcin/gatsby-w
 or on Github Registry.
 
 ```
-docker container run --name caglaryalcin.com -dp 9000:9000 ghcr.io/caglaryalcin/gatsby-website:latest                                                
+docker container run --name caglaryalcin.com -dp 9000:9000 ghcr.io/caglaryalcin/gatsby-website:latest
 ```
 
 and open `http://localhost:9000` in the browser.

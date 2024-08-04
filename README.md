@@ -12,7 +12,7 @@ or on Github Registry.
 docker container run --name caglaryalcin.com -dp 9000:9000 ghcr.io/caglaryalcin/gatsby-website:latest                                                
 ```
 
-and open `localhost:9000` in the browser.
+and open `http://localhost:9000` in the browser.
 
 <br />
 
@@ -27,3 +27,5 @@ or on Github Registry.
 ```
 docker run -d -p 80:80 -v /your-public-folder-path/:/usr/share/nginx/html ghcr.io/caglaryalcin/gatsby-public:latest
 ```
+
+and open `http://localhost` in the browser.

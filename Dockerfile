@@ -5,7 +5,7 @@ ENV NODE_VERSION=18.19.0
 LABEL maintainer="Caglar Yalcin <caglaryalcin.com>"
 LABEL org.opencontainers.image.source="https://github.com/caglaryalcin/caglaryalcin.com"
 
-EXPOSE 8000
+EXPOSE 9000
 
 RUN apk update && apk upgrade && rm -rf /var/cache/apk/*
 
@@ -29,4 +29,6 @@ COPY . .
 
 RUN yarn install && yarn cache clean
 
-CMD ["yarn", "develop", "-H", "0.0.0.0"]
+RUN yarn build
+
+CMD ["yarn", "serve", "-H", "0.0.0.0"]

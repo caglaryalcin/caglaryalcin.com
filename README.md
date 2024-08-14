@@ -19,27 +19,3 @@ docker container run \
 ```
 
 and open `http://localhost:9000` in the browser.
-
-<br />
-
-#### You can publish the built public file of your own website using my image below on Docker hub. :whale:
-
-```
-docker run \
-    -d \
-    -p 80:80 \
-    -v /your-public-folder-path/:/usr/share/nginx/html \
-    caglaryalcin/gatsby-public
-```
-
-or on Github Registry.
-
-```
-docker run \
-    -d \
-    -p 80:80 \
-    -v /your-public-folder-path/:/usr/share/nginx/html \
-    ghcr.io/caglaryalcin/gatsby-public:latest
-```
-
-and open `http://localhost` in the browser.

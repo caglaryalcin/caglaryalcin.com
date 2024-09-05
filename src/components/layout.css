@@ -1,4 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:400,600,700&display=swap');
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/Muli-Regular.woff2') format('woff2'),
+       url('../fonts/Muli-Regular.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/Muli-Bold.woff2') format('woff2'),
+       url('../fonts/Muli-Bold.woff') format('woff');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('../fonts/Muli-ExtraBold.woff2') format('woff2'),
+       url('../fonts/Muli-ExtraBold.woff') format('woff');
+  font-weight: 800;
+}
+
 html {
   font-family: 'Muli', sans-serif;
   -ms-text-size-adjust: 100%;

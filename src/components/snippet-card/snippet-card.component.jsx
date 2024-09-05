@@ -14,6 +14,7 @@ import CustomLink from './../custom-link/custom-link.component';
 import LinkedinLogo from '../../images/social/linkedin_light.png';
 import GithubLogo from '../../images/social/github_light.png';
 import TwitterLogo from '../../images/social/twitter_light.png';
+import PP from './../../images/pp.webp';
 import ReactRotatingText from 'react-rotating-text';
 
 const SnippetCard = () => {
@@ -54,7 +55,7 @@ const SnippetCard = () => {
         </SocialIconsContainer>
       </div>
       <ImageContainer>
-        <img src="https://imagedelivery.net/XGKYBY494fARpRRttJ080A/f95c9652-21e6-44c5-8560-b3ea80731900/public" alt="profile" />
+        <img src={PP} alt='profile' />
       </ImageContainer>
     </MainContainer>
   );

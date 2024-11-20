@@ -13,7 +13,7 @@ import CustomIcon from './../custom-icon/custom-icon.component';
 import CustomLink from './../custom-link/custom-link.component';
 import LinkedinLogo from '../../images/social/linkedin_light.png';
 import GithubLogo from '../../images/social/github_light.png';
-import TwitterLogo from '../../images/social/twitter_light.png';
+import xLogo from '../../images/social/x_light.png';
 import PP from './../../images/pp.webp';
 import ReactRotatingText from 'react-rotating-text';
 
@@ -46,10 +46,10 @@ const SnippetCard = () => {
           </SocialIcons>
           <SocialIcons>
             <CustomIcon
-              className={"twitter"}
-              targetUrl='https://twitter.com/cgasys'
-              imageSource={TwitterLogo}
-              altDescription='twitter'
+              className={"x"}
+              targetUrl='https://x.com/cgasys'
+              imageSource={xLogo}
+              altDescription='x'
             />
           </SocialIcons>
         </SocialIconsContainer>

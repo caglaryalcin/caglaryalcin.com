@@ -6,6 +6,8 @@ import SUN from './../images/sun.png';
 import LinkedinLightLogo from '../images/social/linkedin_light.png';
 import GithubLightLogo from '../images/social/github_light.png';
 import xLightLogo from '../images/social/x_light.png';
+import blueskylightLogo from '../images/social/bluesky-light.png';
+import blueskydarkLogo from '../images/social/bluesky-dark.png';
 import LinkedinDarkLogo from '../images/social/linkedin_dark.png';
 import GithubDarkLogo from '../images/social/github_dark.png';
 import xDarkLogo from '../images/social/x_dark.png';
@@ -37,10 +39,13 @@ const Layout = ({ children }) => {
         let linkedin = document.querySelector(".linkedin");
         let x = document.querySelector(".x");
         let github = document.querySelector(".github");
+        let bluesky = document.querySelector(".bluesky");
 
         linkedin?.setAttribute("src", LinkedinLightLogo);
         x?.setAttribute("src", xLightLogo);
         github?.setAttribute("src", GithubLightLogo);
+        bluesky?.setAttribute("src", blueskylightLogo);
+
       }, [my_tags]);
 
     useEffect(() => {
@@ -78,31 +83,33 @@ const Layout = ({ children }) => {
         const root = document.querySelector(":root");
         root.style.setProperty("background-color", "white");
         my_tags.forEach((item) => {
-            let items = document.querySelector(item);
-            items?.style.setProperty("color", "black");
-        });
-
+          let items = document.querySelector(item);
+          items?.style.setProperty("color", "black");
+        }); 
+      
         let linkedin = document.querySelector(".linkedin");
         let x = document.querySelector(".x");
         let github = document.querySelector(".github");
-
+        let bluesky = document.querySelector(".bluesky");
+      
         linkedin?.setAttribute("src", LinkedinDarkLogo);
         x?.setAttribute("src", xDarkLogo);
         github?.setAttribute("src", GithubDarkLogo);
-
+        bluesky?.setAttribute("src", blueskydarkLogo);
+      
         themeContainer.current.classList.remove("shadow-dark");
         setTimeout(() => {
-            themeContainer.current.classList.add("shadow-light");
-            themeIcon.current.classList.remove("sun_moon_change");
+          themeContainer.current.classList.add("shadow-light");
+          themeIcon.current.classList.remove("sun_moon_change");
         }, 300);
         themeIcon.current.classList.add("sun_moon_change");
-        themeIcon.current.src = MOON;
-
+        themeIcon.current.src = MOON; 
+      
         for (let i = 0; i < items.length; i++) {
-            items.item(i).style.setProperty("background", "#f7f7f7");
-            items.item(i).style.setProperty("color", "black");
+          items.item(i).style.setProperty("background", "#f7f7f7");
+          items.item(i).style.setProperty("color", "black");
         }
-    };
+      }; 
 
     return (
         <>

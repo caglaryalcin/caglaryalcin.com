@@ -14,6 +14,7 @@ import CustomLink from './../custom-link/custom-link.component';
 import LinkedinLogo from '../../images/social/linkedin_light.png';
 import GithubLogo from '../../images/social/github_light.png';
 import xLogo from '../../images/social/x_light.png';
+import blueskyLogo from '../../images/social/bluesky-light.png';
 import PP from './../../images/pp.webp';
 import ReactRotatingText from 'react-rotating-text';
 
@@ -42,6 +43,14 @@ const SnippetCard = () => {
               targetUrl='https://github.com/caglaryalcin'
               imageSource={GithubLogo}
               altDescription='github'
+            />
+          </SocialIcons>
+          <SocialIcons>
+            <CustomIcon
+              className={"bluesky"}
+              targetUrl='https://bsky.app/profile/caglaryalcin.com'
+              imageSource={blueskyLogo}
+              altDescription='bluesky'
             />
           </SocialIcons>
           <SocialIcons>

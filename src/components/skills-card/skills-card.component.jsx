@@ -21,7 +21,7 @@ const SkillsCard = () => {
 			<SectionTitle>Technology Stack</SectionTitle>
 			<StackList>
 				<Techs>
-					I'm currently focused on<Tech style={{ borderBottom: '3px solid #326CE5' }}>K8s</Tech>, <Tech style={{ borderBottom: '3px solid #73ABFF' }}>Swarm</Tech> and <Tech style={{ borderBottom: '3px solid #ff9900' }}>AWS</Tech> services.
+					I'm currently focused on<Tech style={{ borderBottom: '3px solid #326CE5' }}>K8s</Tech>, <Tech style={{ borderBottom: '3px solid #73ABFF' }}>Ansible</Tech> and <Tech style={{ borderBottom: '3px solid #ff9900' }}>AWS</Tech> services.
 				</Techs>
 				<Techs>
 					I'm using <Tech style={{ borderBottom: '3px solid #cf4f4f' }}>Linux distributions</Tech> for both desktop and server, and I greatly enjoy using them.

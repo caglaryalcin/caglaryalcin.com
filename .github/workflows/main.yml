@@ -21,3 +21,12 @@ jobs:
 
       - name: docker image push
         run: docker push ${{ secrets.DOCKER_USERNAME }}/caglaryalcin.com:latest
+
+      - name: GitHub Container Registry login
+        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: GHCR için imajı tagle
+        run: docker tag ${{ secrets.DOCKER_USERNAME }}/caglaryalcin.com:latest ghcr.io/${{ github.repository_owner }}/caglaryalcin.com:latest
+
+      - name: GHCR'a push et
+        run: docker push ghcr.io/${{ github.repository_owner }}/caglaryalcin.com:latest

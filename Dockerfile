@@ -1,28 +1,23 @@
-FROM node:18-alpine
-
-LABEL maintainer="Caglar Yalcin <caglaryalcin.com>"
-LABEL org.opencontainers.image.source="https://github.com/caglaryalcin/caglaryalcin.com"
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-RUN apk add --no-cache \
-    python3 \
-    build-base \
-    vips-dev \
-    fftw-dev \
-    automake \
-    autoconf \
-    libtool \
-    nasm
+RUN apk add --no-cache vips-dev fftw-dev nasm python3 build-base autoconf automake libtool
 
-RUN npm install -g node-gyp
+COPY package.json yarn.lock ./
+
+RUN yarn install --frozen-lockfile
 
 COPY . .
 
-RUN yarn install --frozen-lockfile && yarn cache clean
-
 RUN yarn build
+
+FROM nginx:stable-alpine
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+COPY --from=builder /app/public /usr/share/nginx/html
 
 EXPOSE 9000
 
-CMD ["yarn", "serve", "-H", "0.0.0.0"]
+CMD ["nginx", "-g", "daemon off;"]

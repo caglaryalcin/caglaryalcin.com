@@ -56,7 +56,7 @@ const SnippetCard = () => {
           <SocialIcons>
             <CustomIcon
               className={"x"}
-              targetUrl='https://x.com/cgasys'
+              targetUrl='https://x.com/syscglr'
               imageSource={xLogo}
               altDescription='x'
             />

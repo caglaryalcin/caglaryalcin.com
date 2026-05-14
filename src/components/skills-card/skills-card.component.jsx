@@ -21,13 +21,13 @@ const SkillsCard = () => {
 			<SectionTitle>Technology Stack</SectionTitle>
 			<StackList>
 				<Techs>
-					I'm currently focused on<Tech style={{ borderBottom: '3px solid #326CE5' }}>K8s</Tech>, <Tech style={{ borderBottom: '3px solid #73ABFF' }}>Ansible</Tech> and <Tech style={{ borderBottom: '3px solid #ff9900' }}>n8n</Tech> services.
+					I'm currently focused on<Tech style={{ borderBottom: '3px solid #326CE5' }}>k8s</Tech>, <Tech style={{ borderBottom: '3px solid #73ABFF' }}>Ansible</Tech> and <Tech style={{ borderBottom: '3px solid #ff9900' }}>n8n</Tech> services.
 				</Techs>
 				<Techs>
 					I'm using <Tech style={{ borderBottom: '3px solid #cf4f4f' }}>Linux distributions</Tech> for both desktop and server, and I greatly enjoy using them.
 				</Techs>
 				<Techs>
-					He's my best friend now<Tech style={{ borderBottom: '3px solid #d1672a' }}><CustomLink targetUrl="https://ai.caglaryalcin.com">Claude</CustomLink></Tech>.
+					He's my best friend <Tech style={{ borderBottom: '3px solid #d1672a' }}><strong>Claude</strong> — and his minions? They do my bidding from the shadows.</Tech>.
 				</Techs>
 				<Techs>
 					I'm writing scripts in <Bash>bash@linux<Bash2>:<Bash3>~</Bash3>$ <BashBlinkingCursor>█</BashBlinkingCursor></Bash2></Bash> and <PsComponent> PS C:\> <PSBlinkingCursor></PSBlinkingCursor></PsComponent> based on the specific needs of the institutions I work with.

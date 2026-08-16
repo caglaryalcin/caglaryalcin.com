@@ -1,5 +1,3 @@
-![Alt Text](https://github.com/caglaryalcin/caglaryalcin/blob/main/person.gif)
-
 #### You can use this site to build directly in the image on Docker hub. :whale:
 
 ```

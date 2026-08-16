@@ -6,11 +6,13 @@
  */
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function Seo({ description, lang, meta, title }) {
+const DEFAULT_DESCRIPTION = `Caglar Yalcin is an Architect System Engineer focused on infrastructure, automation, privacy and open-source software.`
+const SOCIAL_IMAGE_ALT = `Caglar Yalcin — Architect System Engineer`
+
+function Seo({ description = DEFAULT_DESCRIPTION, meta = [], title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,76 +20,78 @@ function Seo({ description, lang, meta, title }) {
           siteMetadata {
             title
             author
+            siteUrl
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const socialImage = `${site.siteMetadata.siteUrl}/og.png`
+  const documentTitle = title || site.siteMetadata.title
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: `en`,
       }}
-      {...(title
-        ? {
-          titleTemplate: `%s | ${site.siteMetadata.title}`,
-          title,
-        }
-        : {
-          title: `${site.siteMetadata.title}`,
-        })}
+      title={documentTitle}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:title`,
-          content: title,
+          content: documentTitle,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:type`,
           content: `website`,
         },
         {
-          name: `x:card`,
-          content: `summary`,
+          property: `og:locale`,
+          content: `en_US`,
         },
         {
-          name: `x:creator`,
+          property: `og:image`,
+          content: socialImage,
+        },
+        {
+          property: `og:image:alt`,
+          content: SOCIAL_IMAGE_ALT,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:creator`,
           content: site.siteMetadata.author,
         },
         {
-          name: `x:title`,
-          content: title,
+          name: `twitter:title`,
+          content: documentTitle,
         },
         {
-          name: `x:description`,
-          content: metaDescription,
+          name: `twitter:description`,
+          content: description,
+        },
+        {
+          name: `twitter:image`,
+          content: socialImage,
+        },
+        {
+          name: `twitter:image:alt`,
+          content: SOCIAL_IMAGE_ALT,
         },
       ].concat(meta)}
     />
   )
-}
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
 }
 
 export default Seo

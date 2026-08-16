@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Title,
   Snippet,
@@ -6,65 +6,85 @@ import {
   SocialIconsContainer,
   SocialIcons,
   MainContainer,
-  ImageContainer
+  ImageContainer,
+  IntroContainer,
 } from './snippet-card.styles';
 
 import CustomIcon from './../custom-icon/custom-icon.component';
-import CustomLink from './../custom-link/custom-link.component';
 import LinkedinLogo from '../../images/social/linkedin_light.png';
 import GithubLogo from '../../images/social/github_light.png';
 import xLogo from '../../images/social/x_light.png';
 import blueskyLogo from '../../images/social/bluesky-light.png';
+import LinkedinDarkLogo from '../../images/social/linkedin_dark.png';
+import GithubDarkLogo from '../../images/social/github_dark.png';
+import xDarkLogo from '../../images/social/x_dark.png';
+import blueskyDarkLogo from '../../images/social/bluesky-dark.png';
 import PP from './../../images/pp.webp';
 import ReactRotatingText from 'react-rotating-text';
+import ThemeContext from '../../context/theme-context';
+
+const rotatingText = [
+  'I love free and open-source software (FOSS).',
+  'I love privacy.',
+  'I love security.',
+  'I love self-hosted platforms.',
+  'I love writing scripts.',
+  'I love Open Systems Interconnection (OSI).',
+];
 
 const SnippetCard = () => {
+  const { theme } = useContext(ThemeContext);
+  const isDark = theme === 'dark';
+
   return (
     <MainContainer>
-      <div>
-        <Title>Hi, I'm Caglar.<CustomLink></CustomLink></Title>
-        <Snippet>Architect Sys. Eng. at <a href="https://intertech.com.tr" target="_blank" rel="noopener noreferrer">InterTech</a></Snippet>
-        <Description>
-        I'm a self-improving Systems Engineer with experience in data center operations, virtualization, open source solutions, container orchestration platforms, system operations, privacy and security.<br />
-          I <b><ReactRotatingText items={['love free and open-source software (FOSS).', 'love privacy.', 'love security.', 'love self hosted platforms.', 'love writing scripts.', 'love Open Systems Interconnection (OSI).']} /></b>
-        </Description>
-        <SocialIconsContainer>
-          <SocialIcons>
-            <CustomIcon
-              className={"linkedin"}
-              targetUrl='https://www.linkedin.com/in/cglr/'
-              imageSource={LinkedinLogo}
-              altDescription='linkedin'
-            />
-          </SocialIcons>
-          <SocialIcons>
-            <CustomIcon
-              className={"github"}
-              targetUrl='https://github.com/caglaryalcin'
-              imageSource={GithubLogo}
-              altDescription='github'
-            />
-          </SocialIcons>
-          <SocialIcons>
-            <CustomIcon
-              className={"bluesky"}
-              targetUrl='https://bsky.app/profile/caglaryalcin.com'
-              imageSource={blueskyLogo}
-              altDescription='bluesky'
-            />
-          </SocialIcons>
-          <SocialIcons>
-            <CustomIcon
-              className={"x"}
-              targetUrl='https://x.com/syscglr'
-              imageSource={xLogo}
-              altDescription='x'
-            />
-          </SocialIcons>
-        </SocialIconsContainer>
-      </div>
+      <IntroContainer>
+        <Title>Hi, I'm Caglar.</Title>
+        <Snippet>Architect Sys. Eng.</Snippet>
+      </IntroContainer>
+      <Description>
+        I'm a self-improving Systems Engineer with experience in data center operations, virtualization, open source solutions, container orchestration platforms, system operations, privacy and security.
+        <br />
+        <b>
+          <ReactRotatingText items={rotatingText} />
+        </b>
+      </Description>
+      <SocialIconsContainer aria-label='Social links'>
+        <SocialIcons>
+          <CustomIcon
+            className={"linkedin"}
+            targetUrl='https://www.linkedin.com/in/cglr/'
+            imageSource={isDark ? LinkedinLogo : LinkedinDarkLogo}
+            altDescription='LinkedIn profile'
+          />
+        </SocialIcons>
+        <SocialIcons>
+          <CustomIcon
+            className={"github"}
+            targetUrl='https://github.com/caglaryalcin'
+            imageSource={isDark ? GithubLogo : GithubDarkLogo}
+            altDescription='GitHub profile'
+          />
+        </SocialIcons>
+        <SocialIcons>
+          <CustomIcon
+            className={"bluesky"}
+            targetUrl='https://bsky.app/profile/caglaryalcin.com'
+            imageSource={isDark ? blueskyLogo : blueskyDarkLogo}
+            altDescription='Bluesky profile'
+          />
+        </SocialIcons>
+        <SocialIcons>
+          <CustomIcon
+            className={"x"}
+            targetUrl='https://x.com/syscglr'
+            imageSource={isDark ? xLogo : xDarkLogo}
+            altDescription='X profile'
+          />
+        </SocialIcons>
+      </SocialIconsContainer>
       <ImageContainer>
-        <img src={PP} alt='profile' />
+        <img src={PP} alt='Portrait of Caglar Yalcin' />
       </ImageContainer>
     </MainContainer>
   );

@@ -1,19 +1,40 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  display: flex;
-  margin-bottom: -60px;
+  display: grid;
+  grid-template-areas:
+    "intro image"
+    "description image"
+    "social image";
+  grid-template-columns: minmax(0, 1fr) minmax(170px, 220px);
+  column-gap: clamp(24px, 5vw, 56px);
+  align-items: start;
+  margin-bottom: 20px;
+
+  @media (max-width: 620px) {
+    grid-template-areas:
+      "intro image"
+      "description description"
+      "social social";
+    grid-template-columns: minmax(0, 1fr) 112px;
+    column-gap: 14px;
+  }
+`;
+
+export const IntroContainer = styled.div`
+  grid-area: intro;
 `;
 
 export const Title = styled.h1`
-  font-size: 38px;
+  margin-bottom: 1.1rem;
+  font-size: clamp(2rem, 5vw, 2.4rem);
 `;
 
 export const Snippet = styled.h3`
   font-weight: 600;
   font-size: 23px;
   line-height: 1.5em;
-  // Mobile
+  /* Mobile */
   @media (max-width: 768px) {
     font-size: 20px;
     width: 100%;
@@ -21,27 +42,26 @@ export const Snippet = styled.h3`
 `;
 
 export const Description = styled.div`
-  padding-bottom: 26px;
-  // Mobile
-  @media (max-width: 768px) {
-    width: 180%;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    height: 9em;
-  }
+  grid-area: description;
+  max-width: 650px;
+  padding-bottom: 22px;
 `;
 
-export const SocialIconsContainer = styled.div`
+export const SocialIconsContainer = styled.nav`
+  grid-area: social;
   display: flex;
+  align-items: center;
+  gap: 9px;
 `;
 
 export const SocialIcons = styled.div`
   display: flex;
   margin-bottom: 1.75rem;
   height: 30px;
-  width: 36px;
+  width: 28px;
   img {
     width: 27px;
+    margin: 0;
   }
 
   &:hover {
@@ -53,9 +73,19 @@ export const SocialIcons = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 700px;
-  // Mobile
-  @media (max-width: 768px) {
-    width: 270%;
+  grid-area: image;
+  width: 100%;
+  max-width: 220px;
+  justify-self: end;
+  align-self: start;
+
+  img {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  @media (max-width: 620px) {
+    max-width: 112px;
   }
 `;

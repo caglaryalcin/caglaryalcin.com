@@ -23,7 +23,7 @@ const SeeMoreLink = styled.div`
   text-decoration: underline;
   cursor: pointer;
   &:hover {
-    color: #b85c5c;
+    color: var(--accent);
     outline-width: 0;
   }
 `;
@@ -35,7 +35,7 @@ const ItemContainer = styled.div`
 const Dot = styled.span`
   height: 7px;
   width: 7px;
-  background-color: #413f3f;
+  background-color: var(--border);
   border-radius: 50%;
   display: inline-block;
   position: absolute;
@@ -47,26 +47,13 @@ const Dot = styled.span`
   }
 `;
 
-const Line = styled.div`
-  width: 2px;
-  background-color: #413f3f;
-  position: absolute;
-  left: 7px;
-  top: 27px;
-  height: 25px;
-  z-index: 0;
-  @media (max-width: 768px) {
-    top: 22px;
-  }
-`;
-
 const Logo = styled.img`
   width: 20px;
   height: 20px;
   margin-right: 5px;
   margin-bottom: -3px;
   align-self: center;
-  border: 0.4px solid #181a1b;
+  border: 1px solid var(--border);
   padding: 0px;
   @media (max-width: 768px) {
     padding: 0px;
@@ -92,27 +79,11 @@ const JourneyCard = () => {
 
         <ItemContainer>
           <Dot />
-          <Line />
           <Item>
             <CustomLink targetUrl="https://verified.sertifier.com/en/verify/70778394413340">
               Architect System Engineer
             </CustomLink>{" "}
-            <Date>(Jul 2024 – )</Date>
-          </Item>
-        </ItemContainer>
-
-        <ItemContainer>
-          <Dot />
-          <Line />
-          <Item>
-            Senior System Engineer <Date>(Nov 2023 – Jul 2024)</Date>
-          </Item>
-        </ItemContainer>
-
-        <ItemContainer>
-          <Dot />
-          <Item>
-            System Engineer <Date>(Apr 2022 – Nov 2023)</Date>
+            <Date>(Apr 2022 – Present)</Date>
           </Item>
         </ItemContainer>
 
@@ -169,7 +140,7 @@ const JourneyCard = () => {
               </Item>
               <Item>
                 <CustomEmoji label="graduation" emoji="🎓" /> Graduated from{" "}
-                <BoldText>Ataturk University</BoldText> with a associate degree
+                <BoldText>Ataturk University</BoldText> with an associate degree
                 in Information Management.
               </Item>
             </Edulist>

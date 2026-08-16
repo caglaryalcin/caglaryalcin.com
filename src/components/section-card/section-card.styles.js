@@ -2,13 +2,25 @@ import styled, { keyframes } from "styled-components";
 import "@fontsource/cascadia-code";
 import "@fontsource/source-code-pro";
 
-export const SectionTitle = styled.div`
+export const SectionTitle = styled.h2`
+  position: relative;
   font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 20px;
-  margin-top: 40px;
-  padding: 10px 20px;
-  border-bottom: 4px solid #413f3f;
+  font-size: clamp(1.3rem, 3vw, 1.55rem);
+  margin: 52px 0 24px;
+  padding: 10px 20px 12px;
+  border-bottom: 1px solid var(--border);
+
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    left: 20px;
+    width: 54px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--accent);
+    content: "";
+  }
+
   @media (max-width: 768px) {
     font-size: 21px;
   }
@@ -53,7 +65,7 @@ export const Techs = styled.li`
 `;
 
 export const Date = styled.em`
-  color: #888;
+  color: var(--muted);
   font-size: 16px;
   @media (max-width: 768px) {
     font-size: 15px;
@@ -74,88 +86,81 @@ export const Tech = styled.span`
   }
 `;
 
-export const Bash = styled.span`
-  background: #57003f;
-  color: #7ddd32;
-  font-size: 17px;
-  font-family: "Cascadia Code";
-  border-radius: 3px;
-  padding: 0 3px 1px;
-  @media (max-width: 768px) {
-    font-size: 16px;
-    padding-left: 2px;
-    padding-bottom: 2px;
-    padding-top: 1px;
-  }
+const terminalCursorBlink = keyframes`
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
 `;
 
-export const Bash2 = styled.span`
-  color: #d8d6d0;
-  font-family: "Cascadia Code";
-  font-size: 17px;
-  padding: 2px;
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-`;
+export const TerminalPrompt = styled.code`
+  --terminal-background: ${({ $shell }) =>
+    $shell === "powershell" ? "#012456" : "#57003F"};
+  --terminal-border: ${({ $shell }) =>
+    $shell === "powershell" ? "#123d70" : "#5f234c"};
+  --terminal-user: ${({ $shell }) =>
+    $shell === "powershell" ? "#f3f3f3" : "#7DDD32"};
+  --terminal-path: ${({ $shell }) =>
+    $shell === "powershell" ? "#f3f3f3" : "#729fcf"};
 
-export const Bash3 = styled.span`
-  color: #6d97c5;
-  font-family: "Cascadia Code";
-  font-size: 17px;
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-}`;
-
-const BashblinkCursor = keyframes`
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-`;
-
-export const BashBlinkingCursor = styled.span`
-  animation: ${BashblinkCursor} 0.9s steps(1, end) infinite;
-  margin-bottom: 20px; !important;
-  font-weight: 2;
-  transform: scaleX(0.8);
-  font-size: 15px;
-  @media (max-width: 768px) {
-    position: relative;
-    bottom: 1px;
-  }
+  display: inline-flex;
   position: relative;
-  bottom: 2px;
-`;
+  top: -2px;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0 0.12em;
+  overflow: hidden;
+  vertical-align: -0.18em;
+  white-space: nowrap;
+  border: 1px solid var(--terminal-border);
+  border-radius: 5px;
+  padding: 0.14em 0.42em 0.18em;
+  background: var(--terminal-background);
+  color: #f3f3f3;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 7%), 0 1px 2px rgb(0 0 0 / 18%);
+  font-family: "Cascadia Code", "Source Code Pro", monospace;
+  font-size: 0.86em;
+  font-weight: 500;
+  line-height: 1.38;
 
-export const PsComponent = styled.span`
-  background: #012456;
-  color: #e2dfd7;
-  font-family: "Source Code Pro";
-  font-size: 16px;
-  border-radius: 3px;
-  padding: 0 3px 1px 2px;
+  &::before,
+  &::after {
+    content: none;
+  }
+
   @media (max-width: 768px) {
-    font-size: 16px;
-    display: inline-block;
-    line-height: 1.5;
+    max-width: calc(100vw - 3rem);
+    font-size: 0.82em;
   }
 `;
 
-const blinkAnimation = keyframes`
-  50% { opacity: 0; }
+export const TerminalUser = styled.span`
+  color: var(--terminal-user);
+  font-weight: 400;
 `;
 
-export const PSBlinkingCursor = styled.span`
-  animation: ${blinkAnimation} 1s steps(1, start) 0s infinite;
-  display: inline-block;
-  width: 10px;
-  height: 4px;
-  margin-left: 4px;
-  background: #fedba9;
-  position: relative;
-  top: 2px;
-  @media (max-width: 768px) {
-    position: relative;
-    top: 5px;
+export const TerminalPath = styled.span`
+  color: var(--terminal-path);
+`;
+
+export const TerminalSymbol = styled.span`
+  color: #f3f3f3;
+`;
+
+export const TerminalCursor = styled.span`
+  flex: none;
+  width: ${({ $shell }) => ($shell === "powershell" ? "0.58em" : "0.5em")};
+  height: ${({ $shell }) => ($shell === "powershell" ? "0.12em" : "0.94em")};
+  align-self: ${({ $shell }) =>
+    $shell === "powershell" ? "flex-end" : "center"};
+  margin-bottom: ${({ $shell }) =>
+    $shell === "powershell" ? "0.18em" : "0"};
+  border-radius: 1px;
+  background: ${({ $shell }) =>
+    $shell === "powershell" ? "#fedba9" : "#f3f3f3"};
+  animation: ${terminalCursorBlink} 1s steps(1, end) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
   }
 `;

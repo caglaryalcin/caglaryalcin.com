@@ -10,7 +10,6 @@ import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 const DEFAULT_DESCRIPTION = `Caglar Yalcin is an Architect System Engineer focused on infrastructure, automation, privacy and open-source software.`
-const SOCIAL_IMAGE_ALT = `Caglar Yalcin — Architect System Engineer`
 
 function Seo({ description = DEFAULT_DESCRIPTION, meta = [], title }) {
   const { site } = useStaticQuery(
@@ -20,14 +19,12 @@ function Seo({ description = DEFAULT_DESCRIPTION, meta = [], title }) {
           siteMetadata {
             title
             author
-            siteUrl
           }
         }
       }
     `
   )
 
-  const socialImage = `${site.siteMetadata.siteUrl}/og.png`
   const documentTitle = title || site.siteMetadata.title
 
   return (
@@ -58,16 +55,8 @@ function Seo({ description = DEFAULT_DESCRIPTION, meta = [], title }) {
           content: `en_US`,
         },
         {
-          property: `og:image`,
-          content: socialImage,
-        },
-        {
-          property: `og:image:alt`,
-          content: SOCIAL_IMAGE_ALT,
-        },
-        {
           name: `twitter:card`,
-          content: `summary_large_image`,
+          content: `summary`,
         },
         {
           name: `twitter:creator`,
@@ -80,14 +69,6 @@ function Seo({ description = DEFAULT_DESCRIPTION, meta = [], title }) {
         {
           name: `twitter:description`,
           content: description,
-        },
-        {
-          name: `twitter:image`,
-          content: socialImage,
-        },
-        {
-          name: `twitter:image:alt`,
-          content: SOCIAL_IMAGE_ALT,
         },
       ].concat(meta)}
     />

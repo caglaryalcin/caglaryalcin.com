@@ -2,6 +2,7 @@ import React from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import OmniSightLogo from "../../images/projects/omnisight-logo.svg";
 import LockstepLogo from "../../images/projects/lockstep-logo.svg";
+import CofferLogo from "../../images/projects/coffer-logo.svg";
 import Windows11Logo from "../../images/projects/windows-11.svg";
 
 import {
@@ -36,11 +37,12 @@ const projects = [
     logo: LockstepLogo,
   },
   {
-    title: "Clean Microsoft Products",
+    title: "Coffer",
     description:
-      "A PowerShell utility that removes unwanted Microsoft apps and Windows bloatware while reducing telemetry and sync.",
-    repository: "https://github.com/caglaryalcin/clean-ms-products",
-    logo: Windows11Logo,
+      "Coffer is a self-hosted, multi-user 2fa authenticator vault.",
+    repository: "https://github.com/caglaryalcin/Coffer",
+    demo: "https://demo-coffer.caglaryalcin.com/",
+    logo: CofferLogo,
   },
   {
     title: "After Format",

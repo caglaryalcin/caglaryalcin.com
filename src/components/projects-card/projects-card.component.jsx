@@ -39,7 +39,7 @@ const projects = [
   {
     title: "Coffer",
     description:
-      "Coffer is a self-hosted, multi-user 2fa authenticator vault.",
+      "Coffer is a self-hosted, multi-user 2fa vault.",
     repository: "https://github.com/caglaryalcin/Coffer",
     demo: "https://demo-coffer.caglaryalcin.com/",
     logo: CofferLogo,

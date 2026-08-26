@@ -49,6 +49,7 @@ const projects = [
     description:
       "Windows 11 post-install automation for system setup, privacy hardening, software installation and bloatware removal.",
     repository: "https://github.com/caglaryalcin/after-format",
+    demo: "https://caglaryalcin.github.io/caglaryalcin/main.gif",
     logo: Windows11Logo,
   },
 ];

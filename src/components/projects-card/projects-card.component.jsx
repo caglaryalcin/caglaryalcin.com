@@ -1,5 +1,6 @@
 import React from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { SiFirefoxbrowser, SiGooglechrome } from "react-icons/si";
 import OmniSightLogo from "../../images/projects/omnisight-logo.svg";
 import LockstepLogo from "../../images/projects/lockstep-logo.svg";
 import CofferLogo from "../../images/projects/coffer-logo.svg";
@@ -13,6 +14,8 @@ import {
   CardGrid,
   CardTitle,
   DemoLink,
+  ExtensionLink,
+  ExtensionLinks,
   GithubLink,
   ProjectLogo,
   ProjectsHeading,
@@ -41,6 +44,18 @@ const projects = [
     description:
       "Coffer is a self-hosted, multi-user 2fa vault.",
     repository: "https://github.com/caglaryalcin/Coffer",
+    extensions: [
+      {
+        label: "Firefox Add-ons",
+        href: "https://addons.mozilla.org/en-US/firefox/addon/coffer/",
+        icon: SiFirefoxbrowser,
+      },
+      {
+        label: "Chrome Web Store",
+        href: "https://chromewebstore.google.com/detail/coffer/ajekhlpjkcohkdedhkdjkadilecboimd",
+        icon: SiGooglechrome,
+      },
+    ],
     demo: "https://demo-coffer.caglaryalcin.com/",
     logo: CofferLogo,
   },
@@ -89,6 +104,27 @@ const ProjectsCard = () => (
                 Live demo
                 <FiExternalLink aria-hidden="true" focusable="false" />
               </DemoLink>
+            )}
+
+            {project.extensions && (
+              <ExtensionLinks>
+                {project.extensions.map((extension) => {
+                  const ExtensionIcon = extension.icon;
+
+                  return (
+                    <ExtensionLink
+                      key={extension.label}
+                      href={extension.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${project.title} on ${extension.label}`}
+                      title={extension.label}
+                    >
+                      <ExtensionIcon aria-hidden="true" focusable="false" />
+                    </ExtensionLink>
+                  );
+                })}
+              </ExtensionLinks>
             )}
           </Actions>
         </Card>

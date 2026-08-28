@@ -148,4 +148,22 @@ const ActionLink = styled.a`
 
 export const GithubLink = styled(ActionLink)``;
 
+export const ExtensionLinks = styled.div`
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-left: auto;
+`;
+
+export const ExtensionLink = styled(ActionLink)`
+  width: 34px;
+  min-width: 34px;
+  padding: 6px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+`;
+
 export const DemoLink = styled(ActionLink)``;

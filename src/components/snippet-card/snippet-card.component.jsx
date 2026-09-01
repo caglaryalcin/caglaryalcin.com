@@ -21,19 +21,44 @@ import xDarkLogo from '../../images/social/x_dark.png';
 import blueskyDarkLogo from '../../images/social/bluesky-dark.png';
 import PP from './../../images/pp.webp';
 import ThemeContext from '../../context/theme-context';
+import {
+  HoverTypewriter,
+  useHoverTypewriterInteraction,
+} from '../hover-typewriter/hover-typewriter.component';
+
+const biography =
+  "I'm a self-improving Systems Engineer with experience in data center operations, virtualization, open source solutions, container orchestration platforms, system operations, privacy and security.";
 
 const SnippetCard = () => {
   const { theme } = useContext(ThemeContext);
   const isDark = theme === 'dark';
+  const { shouldType, onMouseEnter, onMouseLeave } =
+    useHoverTypewriterInteraction();
 
   return (
-    <MainContainer>
+    <MainContainer
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <IntroContainer>
         <Title>Hi, I'm Caglar.</Title>
         <Snippet>Architect Sys. Eng.</Snippet>
       </IntroContainer>
       <Description>
-        I'm a self-improving Systems Engineer with experience in data center operations, virtualization, open source solutions, container orchestration platforms, system operations, privacy and security.
+        <span className='biography-copy' aria-hidden='true'>
+          {biography}
+        </span>
+        {!shouldType && (
+          <span className='biography-idle' aria-hidden='true'>
+            <span className='react-rotating-text-cursor'>|</span>
+          </span>
+        )}
+        {shouldType && (
+          <span className='biography-animation' aria-hidden='true'>
+            <HoverTypewriter text={biography} />
+          </span>
+        )}
+        <span className='biography-static'>{biography}</span>
       </Description>
       <SocialIconsContainer aria-label='Social links'>
         <SocialIcons>

@@ -42,9 +42,55 @@ export const Snippet = styled.h3`
 `;
 
 export const Description = styled.div`
+  display: grid;
+  position: relative;
   grid-area: description;
+  min-width: 0;
   max-width: 650px;
   padding-bottom: 22px;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+  .biography-copy,
+  .biography-idle,
+  .biography-animation {
+    grid-area: 1 / 1;
+    min-width: 0;
+  }
+
+  .biography-copy {
+    visibility: hidden;
+  }
+
+  .biography-idle {
+    display: block;
+    pointer-events: none;
+  }
+
+  .biography-animation {
+    display: block;
+    overflow-wrap: break-word;
+    pointer-events: none;
+    white-space: normal;
+  }
+
+  .biography-static {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .biography-animation {
+      display: none;
+    }
+  }
 `;
 
 export const SocialIconsContainer = styled.nav`
@@ -52,6 +98,7 @@ export const SocialIconsContainer = styled.nav`
   display: flex;
   align-items: center;
   gap: 9px;
+  margin-top: 12px;
 `;
 
 export const SocialIcons = styled.div`

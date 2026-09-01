@@ -20,17 +20,7 @@ import GithubDarkLogo from '../../images/social/github_dark.png';
 import xDarkLogo from '../../images/social/x_dark.png';
 import blueskyDarkLogo from '../../images/social/bluesky-dark.png';
 import PP from './../../images/pp.webp';
-import ReactRotatingText from 'react-rotating-text';
 import ThemeContext from '../../context/theme-context';
-
-const rotatingText = [
-  'I love free and open-source software (FOSS).',
-  'I love privacy.',
-  'I love security.',
-  'I love self-hosted platforms.',
-  'I love writing scripts.',
-  'I love Open Systems Interconnection (OSI).',
-];
 
 const SnippetCard = () => {
   const { theme } = useContext(ThemeContext);
@@ -44,10 +34,6 @@ const SnippetCard = () => {
       </IntroContainer>
       <Description>
         I'm a self-improving Systems Engineer with experience in data center operations, virtualization, open source solutions, container orchestration platforms, system operations, privacy and security.
-        <br />
-        <b>
-          <ReactRotatingText items={rotatingText} />
-        </b>
       </Description>
       <SocialIconsContainer aria-label='Social links'>
         <SocialIcons>

@@ -98,11 +98,54 @@ export const CardTitle = styled.h3`
 `;
 
 export const CardDescription = styled.p`
+  display: grid;
+  position: relative;
+  min-width: 0;
+  min-height: 1.5em;
   margin: 0 0 14px;
   color: var(--muted, #a7a3a0);
   font-size: 0.84rem;
   letter-spacing: -0.015em;
   line-height: 1.5;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+  .project-description-copy {
+    grid-area: 1 / 1;
+    min-width: 0;
+    visibility: ${({ $typing }) => ($typing ? "hidden" : "visible")};
+  }
+
+  .project-description-animation {
+    display: block;
+    grid-area: 1 / 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    pointer-events: none;
+    white-space: normal;
+  }
+
+  .project-description-static {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-description-animation {
+      display: none;
+    }
+
+    .project-description-copy {
+      visibility: visible;
+    }
+  }
 `;
 
 export const Actions = styled.nav`

@@ -18,7 +18,7 @@ const SkillsCard = () => {
 			<SectionTitle>Technology Stack</SectionTitle>
 			<StackList>
 				<Techs>
-					He's my best friend <Tech style={{ borderBottom: '3px solid #d1672a' }}><strong>Claude</strong></Tech> — and his minions? They do my bidding from the shadows.
+					He's my best friend <Tech style={{ borderBottom: '3px solid #d1672a' }}><strong>Claude</strong></Tech> / <Tech style={{ borderBottom: '3px solid #10a37f' }}><strong>Codex</strong></Tech> — and his minions? They do my bidding from the shadows.
 				</Techs>
 				<Techs>
 					I'm currently focused on <Tech style={{ borderBottom: '3px solid #326CE5' }}>k8s</Tech>, <Tech style={{ borderBottom: '3px solid #73ABFF' }}>Ansible</Tech> and{' '}

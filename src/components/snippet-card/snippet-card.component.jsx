@@ -6,6 +6,7 @@ import {
   SocialIconsContainer,
   SocialIcons,
   MainContainer,
+  ClickCue,
   ImageContainer,
   IntroContainer,
 } from './snippet-card.styles';
@@ -32,14 +33,33 @@ const biography =
 const SnippetCard = () => {
   const { theme } = useContext(ThemeContext);
   const isDark = theme === 'dark';
-  const { shouldType, prefersReducedMotion, onMouseEnter, onMouseLeave } =
-    useHoverTypewriterInteraction();
+  const {
+    shouldType,
+    showClickCue,
+    clickCuePosition,
+    prefersReducedMotion,
+    onMouseEnter,
+    onMouseMove,
+    onMouseLeave,
+  } = useHoverTypewriterInteraction();
 
   return (
     <MainContainer
       onMouseEnter={onMouseEnter}
+      onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
+      {showClickCue && (
+        <ClickCue
+          $x={clickCuePosition.x}
+          $y={clickCuePosition.y}
+          role='status'
+          aria-label='Click to enable typing sounds'
+        >
+          <span className='click-cue-mouse' aria-hidden='true' />
+          <span>Click for sound</span>
+        </ClickCue>
+      )}
       <IntroContainer>
         <Title>Hi, I'm Caglar.</Title>
         <Snippet>Architect Sys. Eng.</Snippet>

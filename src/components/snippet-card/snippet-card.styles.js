@@ -1,7 +1,30 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const clickPulse = keyframes`
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+`;
+
+const mouseClick = keyframes`
+  0%, 35%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  48% {
+    transform: translateY(2px) scale(0.92);
+  }
+`;
 
 export const MainContainer = styled.div`
   display: grid;
+  position: relative;
   grid-template-areas:
     "intro image"
     "description image"
@@ -28,6 +51,66 @@ export const IntroContainer = styled.div`
 export const Title = styled.h1`
   margin-bottom: 1.1rem;
   font-size: clamp(2rem, 5vw, 2.4rem);
+`;
+
+export const ClickCue = styled.div.attrs(({ $x, $y }) => ({
+  style: {
+    left: `${$x}px`,
+    top: `${$y}px`,
+  },
+}))`
+  position: fixed;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  color: var(--text);
+  background: var(--background);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  transform: translate(14px, 14px);
+  user-select: none;
+
+  .click-cue-mouse {
+    position: relative;
+    width: 14px;
+    height: 20px;
+    border: 1.5px solid currentColor;
+    border-radius: 8px;
+    animation: ${mouseClick} 1.25s ease-in-out infinite;
+
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      width: 2px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      position: absolute;
+      inset: -5px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      content: "";
+      animation: ${clickPulse} 1.25s ease-out infinite;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    display: none;
+  }
 `;
 
 export const Snippet = styled.h3`

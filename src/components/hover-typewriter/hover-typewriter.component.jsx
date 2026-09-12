@@ -589,6 +589,10 @@ export const HoverTypewriter = ({ text, isActive }) => {
 
 export const useHoverTypewriterInteraction = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isAudioReady, setIsAudioReady] = useState(
+    () => typingAudioContext?.state === "running"
+  );
+  const [clickCuePosition, setClickCuePosition] = useState({ x: 0, y: 0 });
   const prefersReducedMotion = usePrefersReducedMotion();
   const shouldType = isHovered && !prefersReducedMotion;
 
@@ -597,7 +601,14 @@ export const useHoverTypewriterInteraction = () => {
       return undefined;
     }
 
-    const unlockAudio = () => unlockTypingAudio();
+    let isMounted = true;
+    const unlockAudio = async () => {
+      const isReady = await unlockTypingAudio();
+
+      if (isReady && isMounted) {
+        setIsAudioReady(true);
+      }
+    };
 
     // Browsers with autoplay permission can start audio immediately. Others
     // are unlocked by the first interaction anywhere on the page.
@@ -607,6 +618,7 @@ export const useHoverTypewriterInteraction = () => {
     window.addEventListener("keydown", unlockAudio);
 
     return () => {
+      isMounted = false;
       window.removeEventListener("pointerdown", unlockAudio);
       window.removeEventListener("touchend", unlockAudio);
       window.removeEventListener("keydown", unlockAudio);
@@ -622,13 +634,26 @@ export const useHoverTypewriterInteraction = () => {
 
   return {
     shouldType,
+    showClickCue: isHovered && !isAudioReady && !prefersReducedMotion,
+    clickCuePosition,
     prefersReducedMotion,
-    onMouseEnter: () => {
+    onMouseEnter: (event) => {
+      setClickCuePosition({ x: event.clientX, y: event.clientY });
+
       if (!prefersReducedMotion) {
-        unlockTypingAudio();
+        unlockTypingAudio().then((isReady) => {
+          if (isReady) {
+            setIsAudioReady(true);
+          }
+        });
       }
 
       setIsHovered(true);
+    },
+    onMouseMove: (event) => {
+      if (!isAudioReady) {
+        setClickCuePosition({ x: event.clientX, y: event.clientY });
+      }
     },
     onMouseLeave: () => setIsHovered(false),
   };

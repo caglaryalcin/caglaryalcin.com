@@ -32,7 +32,7 @@ const biography =
 const SnippetCard = () => {
   const { theme } = useContext(ThemeContext);
   const isDark = theme === 'dark';
-  const { shouldType, onMouseEnter, onMouseLeave } =
+  const { shouldType, prefersReducedMotion, onMouseEnter, onMouseLeave } =
     useHoverTypewriterInteraction();
 
   return (
@@ -48,16 +48,14 @@ const SnippetCard = () => {
         <span className='biography-copy' aria-hidden='true'>
           {biography}
         </span>
-        {!shouldType && (
+        {prefersReducedMotion && (
           <span className='biography-idle' aria-hidden='true'>
             <span className='react-rotating-text-cursor'>|</span>
           </span>
         )}
-        {shouldType && (
-          <span className='biography-animation' aria-hidden='true'>
-            <HoverTypewriter text={biography} />
-          </span>
-        )}
+        <span className='biography-animation' aria-hidden='true'>
+          <HoverTypewriter text={biography} isActive={shouldType} />
+        </span>
         <span className='biography-static'>{biography}</span>
       </Description>
       <SocialIconsContainer aria-label='Social links'>

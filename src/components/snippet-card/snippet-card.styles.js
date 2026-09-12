@@ -44,6 +44,7 @@ export const Snippet = styled.h3`
 export const Description = styled.div`
   display: grid;
   position: relative;
+  caret-color: transparent;
   grid-area: description;
   min-width: 0;
   max-width: 650px;
@@ -99,6 +100,8 @@ export const SocialIconsContainer = styled.nav`
   align-items: center;
   gap: 9px;
   margin-top: 12px;
+  caret-color: transparent;
+  user-select: none;
 `;
 
 export const SocialIcons = styled.div`

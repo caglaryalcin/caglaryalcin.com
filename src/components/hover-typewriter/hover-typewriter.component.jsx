@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const TYPING_PAUSE = 1500;
 const EMPTY_PAUSE = 700;
-const TYPING_VOLUME_MULTIPLIER = 5.4;
+const TYPING_VOLUME_MULTIPLIER = 11.8;
+const TYPEWRITER_SESSION_KEY = "biography-typewriter-state";
 const KEYBOARD_ROWS = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
 
 let typingAudioContext = null;
@@ -37,6 +38,27 @@ const getDeletingDelay = () => randomBetween(120, 170);
 const deletePreviousWord = (value) => {
   const nextValue = value.replace(/(?:\s+)?\S+\s*$/, "");
   return nextValue === value ? "" : nextValue;
+};
+
+const isRestorableOutput = (text, { output, activeTypo }) => {
+  if (typeof output !== "string") {
+    return false;
+  }
+
+  if (text.startsWith(output)) {
+    return true;
+  }
+
+  if (!activeTypo || typeof activeTypo.baseOutput !== "string") {
+    return false;
+  }
+
+  const typedWrongText = activeTypo.wrongText?.slice(
+    0,
+    activeTypo.typedCount
+  );
+
+  return output === activeTypo.baseOutput + typedWrongText;
 };
 
 const getNearbyKey = (character) => {
@@ -368,10 +390,11 @@ const usePrefersReducedMotion = () => {
   return prefersReducedMotion;
 };
 
-export const HoverTypewriter = ({ text }) => {
+export const HoverTypewriter = ({ text, isActive }) => {
   const [output, setOutput] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [activeTypo, setActiveTypo] = useState(null);
+  const [hasRestoredSession, setHasRestoredSession] = useState(false);
   const typoPlanRef = useRef(null);
   const usedTypoPositionsRef = useRef(new Set());
 
@@ -380,8 +403,67 @@ export const HoverTypewriter = ({ text }) => {
   }
 
   useEffect(() => {
+    try {
+      const savedState = window.sessionStorage.getItem(TYPEWRITER_SESSION_KEY);
+
+      if (savedState) {
+        const parsedState = JSON.parse(savedState);
+
+        if (
+          parsedState.text === text &&
+          isRestorableOutput(text, parsedState)
+        ) {
+          setOutput(parsedState.output);
+          setDeleting(Boolean(parsedState.deleting));
+          setActiveTypo(parsedState.activeTypo || null);
+
+          if (Array.isArray(parsedState.typoPlan)) {
+            typoPlanRef.current = new Map(parsedState.typoPlan);
+          }
+
+          if (Array.isArray(parsedState.usedTypoPositions)) {
+            usedTypoPositionsRef.current = new Set(
+              parsedState.usedTypoPositions
+            );
+          }
+        }
+      }
+    } catch {
+      // Session storage is optional; keep the in-memory animation state if blocked.
+    }
+
+    setHasRestoredSession(true);
+  }, [text]);
+
+  useEffect(() => {
+    if (!hasRestoredSession) {
+      return;
+    }
+
+    try {
+      window.sessionStorage.setItem(
+        TYPEWRITER_SESSION_KEY,
+        JSON.stringify({
+          text,
+          output,
+          deleting,
+          activeTypo,
+          typoPlan: Array.from(typoPlanRef.current.entries()),
+          usedTypoPositions: Array.from(usedTypoPositionsRef.current),
+        })
+      );
+    } catch {
+      // Session storage is optional; the component still pauses correctly.
+    }
+  }, [activeTypo, deleting, hasRestoredSession, output, text]);
+
+  useEffect(() => {
     let timeout;
     let chordTimeout;
+
+    if (!isActive || !hasRestoredSession) {
+      return undefined;
+    }
 
     if (activeTypo) {
       const { baseOutput, wrongText, typedCount, correcting } = activeTypo;
@@ -466,7 +548,7 @@ export const HoverTypewriter = ({ text }) => {
       window.clearTimeout(timeout);
       window.clearTimeout(chordTimeout);
     };
-  }, [activeTypo, deleting, output, text]);
+  }, [activeTypo, deleting, hasRestoredSession, isActive, output, text]);
 
   return (
     <span>
@@ -506,6 +588,7 @@ export const useHoverTypewriterInteraction = () => {
 
   return {
     shouldType,
+    prefersReducedMotion,
     onMouseEnter: () => {
       if (!prefersReducedMotion) {
         unlockTypingAudio();

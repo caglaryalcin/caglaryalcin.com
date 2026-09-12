@@ -8,7 +8,7 @@ const KEYBOARD_ROWS = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
 
 let typingAudioContext = null;
 let typingNoiseBuffer = null;
-let typingAudioUnlockPromise = null;
+let latestTypingSoundRequest = 0;
 
 const randomBetween = (minimum, maximum) =>
   minimum + Math.random() * (maximum - minimum);
@@ -191,17 +191,12 @@ const unlockTypingAudio = async () => {
     return true;
   }
 
-  if (!typingAudioUnlockPromise) {
-    typingAudioUnlockPromise = context
-      .resume()
-      .then(() => context.state === "running")
-      .catch(() => false)
-      .finally(() => {
-        typingAudioUnlockPromise = null;
-      });
+  try {
+    await context.resume();
+    return context.state === "running";
+  } catch {
+    return false;
   }
-
-  return typingAudioUnlockPromise;
 };
 
 const getTypingNoiseBuffer = (context) => {
@@ -296,11 +291,13 @@ const playTypingSound = (character, deleting = false) => {
   }
 
   if (context.state !== "running") {
+    const requestId = ++latestTypingSoundRequest;
     const requestedAt = window.performance.now();
 
     unlockTypingAudio().then((isReady) => {
       if (
         isReady &&
+        requestId === latestTypingSoundRequest &&
         !document.hidden &&
         window.performance.now() - requestedAt < 200
       ) {
@@ -620,7 +617,6 @@ export const useHoverTypewriterInteraction = () => {
 
       typingAudioContext = null;
       typingNoiseBuffer = null;
-      typingAudioUnlockPromise = null;
     };
   }, [prefersReducedMotion]);
 

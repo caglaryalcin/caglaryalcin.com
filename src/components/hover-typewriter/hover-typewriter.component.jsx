@@ -8,6 +8,7 @@ const KEYBOARD_ROWS = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
 
 let typingAudioContext = null;
 let typingNoiseBuffer = null;
+let typingAudioUnlockPromise = null;
 
 const randomBetween = (minimum, maximum) =>
   minimum + Math.random() * (maximum - minimum);
@@ -179,12 +180,28 @@ const getTypingAudioContext = () => {
   return typingAudioContext;
 };
 
-const unlockTypingAudio = () => {
+const unlockTypingAudio = async () => {
   const context = getTypingAudioContext();
 
-  if (context?.state === "suspended") {
-    context.resume().catch(() => {});
+  if (!context) {
+    return false;
   }
+
+  if (context.state === "running") {
+    return true;
+  }
+
+  if (!typingAudioUnlockPromise) {
+    typingAudioUnlockPromise = context
+      .resume()
+      .then(() => context.state === "running")
+      .catch(() => false)
+      .finally(() => {
+        typingAudioUnlockPromise = null;
+      });
+  }
+
+  return typingAudioUnlockPromise;
 };
 
 const getTypingNoiseBuffer = (context) => {
@@ -268,14 +285,29 @@ const playToneLayer = (
 };
 
 const playTypingSound = (character, deleting = false) => {
-  const context = typingAudioContext;
+  const context = getTypingAudioContext();
 
   if (
     !context ||
-    context.state !== "running" ||
     typeof document === "undefined" ||
     document.hidden
   ) {
+    return;
+  }
+
+  if (context.state !== "running") {
+    const requestedAt = window.performance.now();
+
+    unlockTypingAudio().then((isReady) => {
+      if (
+        isReady &&
+        !document.hidden &&
+        window.performance.now() - requestedAt < 200
+      ) {
+        playTypingSound(character, deleting);
+      }
+    });
+
     return;
   }
 
@@ -570,11 +602,16 @@ export const useHoverTypewriterInteraction = () => {
 
     const unlockAudio = () => unlockTypingAudio();
 
+    // Browsers with autoplay permission can start audio immediately. Others
+    // are unlocked by the first interaction anywhere on the page.
+    unlockAudio();
     window.addEventListener("pointerdown", unlockAudio, { passive: true });
+    window.addEventListener("touchend", unlockAudio, { passive: true });
     window.addEventListener("keydown", unlockAudio);
 
     return () => {
       window.removeEventListener("pointerdown", unlockAudio);
+      window.removeEventListener("touchend", unlockAudio);
       window.removeEventListener("keydown", unlockAudio);
 
       if (typingAudioContext && typingAudioContext.state !== "closed") {
@@ -583,6 +620,7 @@ export const useHoverTypewriterInteraction = () => {
 
       typingAudioContext = null;
       typingNoiseBuffer = null;
+      typingAudioUnlockPromise = null;
     };
   }, [prefersReducedMotion]);
 

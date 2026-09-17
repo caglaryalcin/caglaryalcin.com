@@ -97,9 +97,13 @@ const JourneyCard = () => {
         <ItemContainer>
           <Dot />
           <Item>
-            <CustomLink targetUrl="https://verified.sertifier.com/en/verify/70778394413340">
+            <a
+              href="https://verified.sertifier.com/en/verify/70778394413340"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Architect System Engineer
-            </CustomLink>{" "}
+            </a>{" "}
             <Date>(Apr 2022 – Sep 2026)</Date>
           </Item>
         </ItemContainer>

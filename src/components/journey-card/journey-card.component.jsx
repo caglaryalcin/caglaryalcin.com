@@ -17,6 +17,7 @@ import fuji from "../../images/company/fuji.jpg";
 import mtrs from "../../images/company/mtrs.jpg";
 import netas from "../../images/company/netas.jpg";
 import inter from "../../images/company/inter.jpg";
+import deniz from "../../images/company/deniz.jpg";
 
 const SeeMoreLink = styled.div`
   display: inline-block;
@@ -69,6 +70,22 @@ const JourneyCard = () => {
       <SectionTitle>Experiences</SectionTitle>
       <ItemList style={{ marginTop: "30px" }}>
         <Item>
+          <Logo src={deniz} alt="" />
+          <span className={classes.presentText}>
+            <CustomLink targetUrl="https://www.denizbank.com">
+              DenizBank
+            </CustomLink>
+          </span>
+        </Item>
+
+        <ItemContainer>
+          <Dot />
+          <Item>
+            Architect System Engineer <Date>(Sep 2026 – Present)</Date>
+          </Item>
+        </ItemContainer>
+
+        <Item>
           <Logo src={inter} alt="" />
           <span className={classes.presentText}>
             <CustomLink targetUrl="https://intertech.com.tr">
@@ -83,7 +100,7 @@ const JourneyCard = () => {
             <CustomLink targetUrl="https://verified.sertifier.com/en/verify/70778394413340">
               Architect System Engineer
             </CustomLink>{" "}
-            <Date>(Apr 2022 – Present)</Date>
+            <Date>(Apr 2022 – Sep 2026)</Date>
           </Item>
         </ItemContainer>
 

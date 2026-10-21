@@ -4,6 +4,7 @@ import { SiFirefoxbrowser, SiGooglechrome } from "react-icons/si";
 import OmniSightLogo from "../../images/projects/omnisight-logo.svg";
 import LockstepLogo from "../../images/projects/lockstep-logo.svg";
 import CofferLogo from "../../images/projects/coffer-logo.svg";
+import MonlineLogo from "../../images/projects/monline-logo.svg";
 import Windows11Logo from "../../images/projects/windows-11.svg";
 
 import {
@@ -26,18 +27,10 @@ const projects = [
   {
     title: "OmniSight",
     description:
-      "A single-glance dashboard for monitoring servers, virtualization, containers, storage, databases and service health.",
+      "A single dashboard for monitoring infrastructure and service health.",
     repository: "https://github.com/caglaryalcin/OmniSight",
     demo: "https://demo-omnisight.caglaryalcin.com",
     logo: OmniSightLogo,
-  },
-  {
-    title: "Lockstep",
-    description:
-      "A self-hosted security checklist for tracking habits, priorities and profile-based progress.",
-    repository: "https://github.com/caglaryalcin/lockstep",
-    demo: "https://demo-lockstep.caglaryalcin.com",
-    logo: LockstepLogo,
   },
   {
     title: "Coffer",
@@ -60,9 +53,25 @@ const projects = [
     logo: CofferLogo,
   },
   {
+    title: "Monline",
+    description:
+      "A self-hosted app for tracking income, expenses, subscriptions and budgets.",
+    repository: "https://github.com/caglaryalcin/Monline",
+    demo: "https://demo-monline.caglaryalcin.com",
+    logo: MonlineLogo,
+  },
+  {
+    title: "Lockstep",
+    description:
+      "A self-hosted security checklist for tracking habits, priorities and profile-based progress.",
+    repository: "https://github.com/caglaryalcin/lockstep",
+    demo: "https://demo-lockstep.caglaryalcin.com",
+    logo: LockstepLogo,
+  },
+  {
     title: "After Format",
     description:
-      "Windows 11 post-install automation for system setup, privacy hardening, software installation and bloatware removal.",
+      "Windows 11 setup automation for privacy, apps and bloatware removal.",
     repository: "https://github.com/caglaryalcin/after-format",
     demo: "https://caglaryalcin.github.io/caglaryalcin/main.gif",
     logo: Windows11Logo,
@@ -132,6 +141,7 @@ const ProjectsCard = () => (
           </Actions>
         </Card>
       ))}
+      <Card as="div" className="project-placeholder" aria-hidden="true" />
     </CardGrid>
   </ProjectsSection>
 );

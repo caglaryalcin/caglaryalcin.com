@@ -35,6 +35,10 @@ export const CardGrid = styled.div`
 
   @media (max-width: 680px) {
     grid-template-columns: 1fr;
+
+    .project-placeholder {
+      display: none;
+    }
   }
 `;
 
@@ -68,9 +72,9 @@ export const ProjectLogo = styled.div`
 export const Card = styled.article`
   display: flex;
   min-width: 0;
-  min-height: 190px;
+  min-height: 160px;
   flex-direction: column;
-  padding: 18px;
+  padding: 14px;
   overflow: hidden;
   border: 1px solid var(--border, #3a3d3f);
   border-radius: 14px;
@@ -79,7 +83,7 @@ export const Card = styled.article`
 
   @media (max-width: 680px) {
     min-height: 0;
-    padding: 16px;
+    padding: 14px;
   }
 `;
 
@@ -100,7 +104,7 @@ export const CardTitle = styled.h3`
 export const CardDescription = styled.p`
   min-width: 0;
   min-height: 1.5em;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   color: var(--muted, #a7a3a0);
   font-size: 0.84rem;
   letter-spacing: -0.015em;
